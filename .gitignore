@@ -1,0 +1,17 @@
+# Reference material fetched from the English source site — regenerate with
+# `python tools/mirror.py` + `python tools/extract_bodies.py` when needed.
+tools/en-mirror/
+tools/en-bodies/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local tooling settings, not part of the site
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

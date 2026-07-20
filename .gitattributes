@@ -1,0 +1,9 @@
+# The site is authored and built with LF endings; keep it that way in the repo
+# regardless of the checkout platform, so builds are byte-stable on Windows.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp3 binary
+*.ico binary

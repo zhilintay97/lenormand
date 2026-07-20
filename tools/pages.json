@@ -1,0 +1,892 @@
+[
+  {
+    "path": "",
+    "depth": 0,
+    "title": "Free Lenormand Reading Online | Lenormand",
+    "description": "Get a free Lenormand reading online. Draw from the full 36-card Petit Lenormand deck, choose from seven spreads, or look up any card's meaning. Guided readings, no sign-up, no email.",
+    "nav_active": "Home",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "about/",
+    "depth": 1,
+    "title": "About — Lenormand",
+    "description": "About Lenormand — a free, sign-up-free home for the 36-card Petit Lenormand deck, seven spreads, and quiet card readings online.",
+    "nav_active": "",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/",
+    "depth": 1,
+    "title": "Lenormand Card Library — All 36 Cards | Lenormand",
+    "description": "Browse all 36 Lenormand cards. Click any card for its full meaning — keywords, in love, in career, advice, and the playing card association.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/anchor/",
+    "depth": 2,
+    "title": "The Anchor Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Anchor Lenormand card (35, 9 of Spades). Stability · Work - what The Anchor reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/bear/",
+    "depth": 2,
+    "title": "The Bear Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Bear Lenormand card (15, 10 of Clubs). Strength · Authority - what The Bear reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/birds/",
+    "depth": 2,
+    "title": "The Birds Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Birds Lenormand card (12, 7 of Diamonds). Chatter · Anxiety - what The Birds reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/book/",
+    "depth": 2,
+    "title": "The Book Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Book Lenormand card (26, 10 of Diamonds). Secret · Knowledge - what The Book reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/bouquet/",
+    "depth": 2,
+    "title": "The Bouquet Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Bouquet Lenormand card (9, Queen of Spades). Gift · Charm - what The Bouquet reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/child/",
+    "depth": 2,
+    "title": "The Child Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Child Lenormand card (13, Jack of Spades). Newness · Innocence - what The Child reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/clouds/",
+    "depth": 2,
+    "title": "The Clouds Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Clouds Lenormand card (6, King of Clubs). Doubt · Confusion - what The Clouds reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/clover/",
+    "depth": 2,
+    "title": "The Clover Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Clover Lenormand card (2, 6 of Diamonds). Quick luck, fortune, opportunity — what The Clover reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/coffin/",
+    "depth": 2,
+    "title": "The Coffin Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Coffin Lenormand card (8, 9 of Diamonds). Ending · Loss - what The Coffin reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/cross/",
+    "depth": 2,
+    "title": "The Cross Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Cross Lenormand card (36, 6 of Clubs). Burden · Destiny - what The Cross reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/crossroad/",
+    "depth": 2,
+    "title": "The Crossroad Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Crossroad Lenormand card (22, Queen of Diamonds). Decision · Choice - what The Crossroad reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/dog/",
+    "depth": 2,
+    "title": "The Dog Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Dog Lenormand card (18, 10 of Hearts). Loyalty · Friendship - what The Dog reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/fish/",
+    "depth": 2,
+    "title": "The Fish Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Fish Lenormand card (34, King of Diamonds). Money · Business - what The Fish reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/fox/",
+    "depth": 2,
+    "title": "The Fox Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Fox Lenormand card (14, 9 of Clubs). Cunning · Work - what The Fox reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/garden/",
+    "depth": 2,
+    "title": "The Garden Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Garden Lenormand card (20, 8 of Spades). Society · Public - what The Garden reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/heart/",
+    "depth": 2,
+    "title": "The Heart Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Heart Lenormand card (24, Jack of Hearts). Love · Kindness - what The Heart reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/house/",
+    "depth": 2,
+    "title": "The House Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The House Lenormand card (4, King of Hearts). Home · Family - what The House reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/key/",
+    "depth": 2,
+    "title": "The Key Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Key Lenormand card (33, 8 of Diamonds). Breakthrough · Certainty - what The Key reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/letter/",
+    "depth": 2,
+    "title": "The Letter Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Letter Lenormand card (27, 7 of Spades). Message · Document - what The Letter reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/lily/",
+    "depth": 2,
+    "title": "The Lily Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Lily Lenormand card (30, King of Spades). Peace · Maturity - what The Lily reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/man/",
+    "depth": 2,
+    "title": "The Man Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Man Lenormand card (28, Ace of Hearts). Querent · Partner - what The Man reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/mice/",
+    "depth": 2,
+    "title": "The Mice Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Mice Lenormand card (23, 7 of Clubs). Loss · Decay - what The Mice reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/moon/",
+    "depth": 2,
+    "title": "The Moon Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Moon Lenormand card (32, 8 of Hearts). Emotion · Reputation - what The Moon reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/mountain/",
+    "depth": 2,
+    "title": "The Mountain Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Mountain Lenormand card (21, 8 of Clubs). Obstacle · Delay - what The Mountain reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/rider/",
+    "depth": 2,
+    "title": "The Rider Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Rider Lenormand card (1, 9 of Hearts). News, messages, swift arrival — what The Rider reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/ring/",
+    "depth": 2,
+    "title": "The Ring Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Ring Lenormand card (25, Ace of Clubs). Commitment · Cycle - what The Ring reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/scythe/",
+    "depth": 2,
+    "title": "The Scythe Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Scythe Lenormand card (10, Jack of Diamonds). Sudden · Sharp - what The Scythe reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/ship/",
+    "depth": 2,
+    "title": "The Ship Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Ship Lenormand card (3, 10 of Spades). Travel · Distance - what The Ship reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/snake/",
+    "depth": 2,
+    "title": "The Snake Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Snake Lenormand card (7, Queen of Clubs). Complication · Cunning - what The Snake reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/star/",
+    "depth": 2,
+    "title": "The Star Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Star Lenormand card (16, 6 of Hearts). Hope · Guidance - what The Star reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/stork/",
+    "depth": 2,
+    "title": "The Stork Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Stork Lenormand card (17, Queen of Hearts). Change · Move - what The Stork reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/sun/",
+    "depth": 2,
+    "title": "The Sun Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Sun Lenormand card (31, Ace of Diamonds). Joy · Success - what The Sun reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/tower/",
+    "depth": 2,
+    "title": "The Tower Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Tower Lenormand card (19, 6 of Spades). Authority · Isolation - what The Tower reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/tree/",
+    "depth": 2,
+    "title": "The Tree Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Tree Lenormand card (5, 7 of Hearts). Health · Growth - what The Tree reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/whip/",
+    "depth": 2,
+    "title": "The Whip Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Whip Lenormand card (11, Jack of Clubs). Conflict · Repetition - what The Whip reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "cards/woman/",
+    "depth": 2,
+    "title": "The Woman Lenormand Card Meaning | Lenormand",
+    "description": "The complete meaning of The Woman Lenormand card (29, Ace of Spades). Querent · Partner - what The Woman reveals in love, career, advice and combinations.",
+    "nav_active": "Cards",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "contact/",
+    "depth": 1,
+    "title": "Contact — Lenormand",
+    "description": "Contact Lenormand. Reach us at hello@lenormand.io for feedback, corrections, partnership inquiries or anything else.",
+    "nav_active": "",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/",
+    "depth": 1,
+    "title": "Lenormand Decks — All Major Modern & Traditional Decks | Lenormand",
+    "description": "A library of Lenormand decks — modern art-led decks, traditional German decks, and historical foundations. Reviews, creators, publishers, and where to find each.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/blue-owl/",
+    "depth": 2,
+    "title": "Blue Owl Lenormand — Traditional German Deck Review | Lenormand",
+    "description": "The Blue Owl Lenormand — the classic traditional German deck published by AGM-Urania. Folk-art imagery, verse cards, and the most widely-used Lenormand in print.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/celtic/",
+    "depth": 2,
+    "title": "Celtic Lenormand by Chloë McCracken — Deck Review | Lenormand",
+    "description": "The Celtic Lenormand by Chloë McCracken with art by Will Worthington — a 36-card deck re-imagining the traditional symbols through Celtic mythology and the British/Irish landscape.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/chelsea/",
+    "depth": 2,
+    "title": "Chelsea Lenormand by Marcia McCord — Deck Review | Lenormand",
+    "description": "The Chelsea Lenormand by Marcia McCord — a vintage-inspired 36-card deck drawing on early-20th-century print culture. Sepia-toned, nostalgic, characterful.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/dondorf/",
+    "depth": 2,
+    "title": "Dondorf Lenormand (Mlle Lenormand 1890) — Historical Deck | Lenormand",
+    "description": "The Dondorf Lenormand of c. 1890 — the foundational chromolithographic deck almost every modern traditional Lenormand descends from. Reprints in current circulation.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/dreaming-way/",
+    "depth": 2,
+    "title": "Dreaming Way Lenormand — Soft Illustrated Deck | Lenormand",
+    "description": "The Dreaming Way Lenormand by Kwon Shina and Lynn Araujo — a soft, fashion-illustration-influenced modern deck. Companion to the popular Dreaming Way Tarot.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/fairy-tale/",
+    "depth": 2,
+    "title": "Fairy Tale Lenormand by Lisa Hunt — Deck Review | Lenormand",
+    "description": "The Fairy Tale Lenormand by Lisa Hunt — a 36-card deck re-imagining the traditional symbols as scenes from European fairy tales. Painterly, narrative, beginner-friendly.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/game-of-hope/",
+    "depth": 2,
+    "title": "Game of Hope (Hechtel 1799) — The Original Lenormand Deck | Lenormand",
+    "description": "Das Spiel der Hoffnung — the actual 1799 origin of the Lenormand tradition. A German parlour game by Johann Kaspar Hechtel, with the same 36 cards and numbers used today.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/gilded-reverie/",
+    "depth": 2,
+    "title": "Gilded Reverie Lenormand by Ciro Marchetti — Deck Review | Lenormand",
+    "description": "The Gilded Reverie Lenormand by Ciro Marchetti — a baroque, jewel-toned modern Lenormand deck. The cards, the artwork, the expanded edition, and where to find it.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/maybe/",
+    "depth": 2,
+    "title": "Maybe Lenormand by Ryan Edward — Cult Modern Deck | Lenormand",
+    "description": "The Maybe Lenormand by Ryan Edward — a darkly stylish, surreal, pop-art-inflected modern deck published by Game of Hope Press. The cult favourite of contemporary Lenormand.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/mystical/",
+    "depth": 2,
+    "title": "Mystical Lenormand — Modern Cosmic Deck | Lenormand",
+    "description": "The Mystical Lenormand by Regula Elizabeth Fiechter — a long-running modern deck published by AGM-Urania. Cosmic, atmospheric, with a quietly metaphysical register.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/old-style/",
+    "depth": 2,
+    "title": "Old Style Lenormand — Restored 19th-Century Deck | Lenormand",
+    "description": "The Old Style Lenormand — a faithful restoration of late-19th-century European Lenormand imagery, published by Königsfurt-Urania. A working traditional deck for readers who want history.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/pixies-astounding/",
+    "depth": 2,
+    "title": "Pixie's Astounding Lenormand by Edmund Zebrowski — Deck Review | Lenormand",
+    "description": "The Pixie's Astounding Lenormand by Edmund Zebrowski — a 36-card deck illustrated in the iconic Pamela Colman Smith / Rider-Waite-Smith style. The bridge deck for tarot readers.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/rana-george/",
+    "depth": 2,
+    "title": "Rana George Lenormand — Multicultural Modern Deck | Lenormand",
+    "description": "The Rana George Lenormand by author and teacher Rana George — a multicultural modern deck with photo-collage imagery drawing on Middle Eastern and Mediterranean visual traditions.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/steampunk/",
+    "depth": 2,
+    "title": "Steampunk Lenormand by Caitlín Matthews — Deck Review | Lenormand",
+    "description": "The Steampunk Lenormand by Caitlín Matthews and Wil Kinghan — a Victorian-mechanical-fantasy 36-card deck companion to Matthews's substantial Lenormand teaching work.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "decks/under-the-roses/",
+    "depth": 2,
+    "title": "Under the Roses Lenormand — Victorian/Pre-Raphaelite Deck | Lenormand",
+    "description": "The Under the Roses Lenormand by Kendra Hurteau and Katrina Hill — a Victorian/Pre-Raphaelite-influenced 36-card deck with rose-and-thorn motifs throughout. A modern collector's favourite.",
+    "nav_active": "Decks",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "disclaimer/",
+    "depth": 1,
+    "title": "Disclaimer — Lenormand",
+    "description": "Important disclaimer for Lenormand — readings are for reflection and entertainment only and are not a substitute for professional advice.",
+    "nav_active": "",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "faq/",
+    "depth": 1,
+    "title": "FAQ — Lenormand Questions Answered | Lenormand",
+    "description": "Frequently asked questions about Lenormand and online Lenormand — how readings work, whether the site is really free, what the cards can and can't do.",
+    "nav_active": "",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/",
+    "depth": 1,
+    "title": "Lenormand Guides & Tutorials | Lenormand",
+    "description": "Long-form Lenormand guides — what the deck is, how to read it, how to shuffle and ask good questions, combinations, significators, the Grand Tableau houses. Free to read.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/how-many-cards-in-lenormand/",
+    "depth": 2,
+    "title": "How Many Cards in a Lenormand Deck? | Lenormand",
+    "description": "How many cards in a Lenormand deck? The short answer is 36, with a full breakdown of why that number, decks with extras, and how Lenormand compares to tarot.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/how-to-ask-lenormand-questions/",
+    "depth": 2,
+    "title": "How to Ask Lenormand Questions That Work | Lenormand",
+    "description": "How to ask Lenormand questions that get clear, useful answers. Concrete vs abstract, open vs yes/no, time-framed questions, and worked examples of framings that work.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/how-to-read-card-combinations/",
+    "depth": 2,
+    "title": "How to Read Lenormand Card Combinations | Lenormand",
+    "description": "Combinations are the heart of Lenormand. A practical guide to reading pairings — noun + adjective, the six classic types, ten worked examples, and how to build your vocabulary.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/how-to-read-lenormand/",
+    "depth": 2,
+    "title": "How to Read Lenormand — A Beginner's Guide | Lenormand",
+    "description": "How to read Lenormand cards from scratch — the system, the spreads, combinations, and a worked 3-card example. A practical, beginner-friendly guide to reading the 36-card Petit Lenormand.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/how-to-shuffle-lenormand/",
+    "depth": 2,
+    "title": "How to Shuffle a Lenormand Deck — A Practical Guide | Lenormand",
+    "description": "How to shuffle a Lenormand deck — the practical mechanics, traditional methods, holding your question, cutting, and drawing. Everything to do before laying the cards.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/how-to-use-significators/",
+    "depth": 2,
+    "title": "How to Use Significators in Lenormand | Lenormand",
+    "description": "How to use the Man and Woman significator cards in Lenormand readings — choosing one, using it in line spreads, and the significator's central role in the Grand Tableau.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/lenormand-for-beginners/",
+    "depth": 2,
+    "title": "Lenormand for Beginners — How to Start Reading | Lenormand",
+    "description": "A beginner's guide to Lenormand — pick your first deck, learn the 36 keywords, build to 3-card lines, and a first-month practice plan that actually works.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/lenormand-vs-tarot/",
+    "depth": 2,
+    "title": "Lenormand vs Tarot — What's the Difference? | Lenormand",
+    "description": "Lenormand vs tarot — a clear comparison of the two systems. Card count, depth, reading style, reversals, tone, and which to learn first.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/what-are-lenormand-houses/",
+    "depth": 2,
+    "title": "What Are the Lenormand Houses? — Grand Tableau Guide | Lenormand",
+    "description": "What are the Lenormand houses? The 36 fixed positions on a Grand Tableau, how they shade the cards that land in them, and how to read by house.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "guides/what-is-lenormand/",
+    "depth": 2,
+    "title": "What Is Lenormand? A Beginner's Guide to the 36-Card Deck | Lenormand",
+    "description": "What is Lenormand? A clear introduction to the 36-card Petit Lenormand — the deck's history, how it differs from tarot, the structure of the cards, and what it's actually used for.",
+    "nav_active": "Guides",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "privacy-policy/",
+    "depth": 1,
+    "title": "Privacy Policy — Lenormand",
+    "description": "Lenormand's privacy policy — what we collect, what we don't, and how we use cookies and analytics.",
+    "nav_active": "",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/",
+    "depth": 1,
+    "title": "All Lenormand Spreads — Free Online Readings | Lenormand",
+    "description": "Browse every free Lenormand spread on the site — from a quick 3-card line to the full 36-card Grand Tableau. Pick a spread and draw instantly, no sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/3-card-spread/",
+    "depth": 2,
+    "title": "Free 3-Card Lenormand Spread Online | Lenormand",
+    "description": "Free 3-card Lenormand spread — past, present, future. Draw three cards from the 36-card deck and read them as a sentence. No sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "data-spread=\"three_card_spread\"",
+    "scripts": [
+      "deck.js",
+      "spreads.js",
+      "interpretations.js",
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/5-card-spread/",
+    "depth": 2,
+    "title": "Free 5-Card Lenormand Spread Online | Lenormand",
+    "description": "Free 5-card Lenormand spread — past, recent past, present, near future, outcome. Draw five cards from the 36-card deck and read them as a sentence. No sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "data-spread=\"five_card_spread\"",
+    "scripts": [
+      "deck.js",
+      "spreads.js",
+      "interpretations.js",
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/7-card-spread/",
+    "depth": 2,
+    "title": "Free 7-Card Lenormand Spread Online | Lenormand",
+    "description": "Free 7-card Lenormand spread — past, recent past, influences, present, advice, near future, outcome. Draw seven cards from the 36-card deck. No sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "data-spread=\"seven_card_spread\"",
+    "scripts": [
+      "deck.js",
+      "spreads.js",
+      "interpretations.js",
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/9-card-spread/",
+    "depth": 2,
+    "title": "Free 3x3 Lenormand Spread Online — 9 Cards | Lenormand",
+    "description": "Free 3x3 Lenormand spread — nine cards laid in a three-by-three box. Past, present and future across the rows, with the centre card as the heart of the matter. No sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "data-spread=\"nine_card_spread\"",
+    "scripts": [
+      "deck.js",
+      "spreads.js",
+      "interpretations.js",
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/grand-tableau/",
+    "depth": 2,
+    "title": "Free Grand Tableau Lenormand Spread Online | Lenormand",
+    "description": "Free Grand Tableau Lenormand spread — the full 36-card reading. The most iconic and comprehensive Lenormand layout, with every card laid out at once. No sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "data-spread=\"grand_tableau\"",
+    "scripts": [
+      "deck.js",
+      "spreads.js",
+      "interpretations.js",
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/love-spread/",
+    "depth": 2,
+    "title": "Free Love Lenormand Spread Online | Lenormand",
+    "description": "Free Lenormand love spread — five cards on your love life as a whole: where it stands, what you bring, what blocks you, what love wants, and what's approaching. No sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "data-spread=\"love_spread\"",
+    "scripts": [
+      "deck.js",
+      "spreads.js",
+      "interpretations.js",
+      "app.js"
+    ]
+  },
+  {
+    "path": "spreads/relationship-spread/",
+    "depth": 2,
+    "title": "Free Relationship Lenormand Spread Online | Lenormand",
+    "description": "Free Lenormand relationship spread — five cards reading the bond between two people: you, them, the connection, the challenge, and the outcome. No sign-up.",
+    "nav_active": "Spreads",
+    "body_attrs": "data-spread=\"relationship_spread\"",
+    "scripts": [
+      "deck.js",
+      "spreads.js",
+      "interpretations.js",
+      "app.js"
+    ]
+  },
+  {
+    "path": "terms-of-service/",
+    "depth": 1,
+    "title": "Terms of Service — Lenormand",
+    "description": "The terms of service for Lenormand — what you can expect from the site and what we expect from you.",
+    "nav_active": "",
+    "body_attrs": "",
+    "scripts": [
+      "app.js"
+    ]
+  }
+]
