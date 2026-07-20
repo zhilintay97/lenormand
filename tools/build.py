@@ -44,6 +44,40 @@ NAV = [
 
 SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "app.js"]
 
+# The 404 page is rendered for whatever path the visitor got wrong, so the
+# browser's base URL is unknown at build time and depth-relative links would
+# break. Every link and asset is therefore absolute, which also keeps the page
+# correct on the GitHub Pages copy, where the site sits under /lenormand/.
+NOT_FOUND_TITLE = "页面不存在 | 雷诺曼"
+NOT_FOUND_DESC = "你要找的页面不存在。回到首页，或从这里进入 36 张牌的牌义、七个牌阵与十篇雷诺曼指南。"
+NOT_FOUND_BODY = """    <div class="container">
+      <section class="page-head fade-up">
+        <div class="hero-eyebrow">404</div>
+        <h1>这一页<em>不在这里</em></h1>
+        <div class="hero-divider"><span>✦</span></div>
+        <p class="intro">
+          你要找的页面不存在——也许网址里少了一个字母，也许这一页从来就没有过。
+          牌都还在，只是这条路走不通。
+        </p>
+        <div class="hero-cta">
+          <a href="{p}" class="btn">回到首页</a>
+          <a href="{p}cards/" class="btn-ghost">浏览 36 张牌</a>
+        </div>
+      </section>
+
+      <section class="card-section fade-up">
+        <h2>你可能想找的</h2>
+        <ul>
+          <li><a href="{p}cards/">36 张牌的完整牌义</a>——从骑士到十字架，每张牌都附它与其余 35 张的组合读法。</li>
+          <li><a href="{p}spreads/">七个牌阵</a>——从三张牌的横列，到摊满 36 张的大牌阵，都可以直接抽。</li>
+          <li><a href="{p}guides/">十篇指南</a>——怎么读、怎么问、怎么洗牌，以及大牌阵的宫位是什么。</li>
+          <li><a href="{p}decks/">十五副牌组测评</a>——当代艺术风、德国传统经典，以及奠基性的历史版本。</li>
+        </ul>
+        <p>如果你是顺着本站的链接走到这里的，那是我们的问题——欢迎<a href="{p}contact/">告诉我们</a>。</p>
+      </section>
+    </div>
+"""
+
 
 def esc(s):
     return (s.replace("&", "&amp;").replace("<", "&lt;")
@@ -55,13 +89,19 @@ def head(page, p):
     title, desc = page["title"], page["description"]
     url = SITE_URL + "/" + page["path"]
     t, d = esc(title), esc(desc)
+    # The 404 page is served in place of every unknown path, so it must not
+    # claim a canonical URL of its own — that would map arbitrary broken URLs
+    # onto a real page — and it must not be indexed.
+    indexing = ('  <meta name="robots" content="noindex" />'
+                if page.get("noindex")
+                else f'  <link rel="canonical" href="{url}" />')
     return f"""  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{t}</title>
   <link rel="icon" type="image/png" href="{p}images/icon.png" />
   <link rel="apple-touch-icon" href="{p}images/icon.png" />
   <meta name="description" content="{d}" />
-  <link rel="canonical" href="{url}" />
+{indexing}
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="{SITE_NAME}" />
   <meta property="og:locale" content="zh_CN" />
@@ -149,8 +189,8 @@ def footer(p):
   </footer>"""
 
 
-def render(page, body):
-    p = "../" * page["depth"]
+def render(page, body, prefix=None):
+    p = prefix if prefix is not None else "../" * page["depth"]
     attrs = (" " + page["body_attrs"]) if page.get("body_attrs") else ""
     scripts = SPREAD_SCRIPTS if page.get("body_attrs") else ["app.js"]
     script_tags = "\n".join(f'  <script src="{p}js/{s}"></script>' for s in scripts)
@@ -205,6 +245,15 @@ def main():
         with open(dest, "w", encoding="utf-8", newline="\n") as f:
             f.write(render(page, body))
         written += 1
+
+    # ---- 404.html (absolute links; excluded from the sitemap) ----
+    absolute = SITE_URL + "/"
+    not_found = {
+        "path": "", "depth": 0, "nav_active": "", "body_attrs": "",
+        "title": NOT_FOUND_TITLE, "description": NOT_FOUND_DESC, "noindex": True,
+    }
+    with open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(render(not_found, NOT_FOUND_BODY.format(p=absolute), prefix=absolute))
 
     # ---- sitemap.xml ----
     locs = "\n".join(
