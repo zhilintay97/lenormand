@@ -59,11 +59,16 @@ python tools/verify.py           # 验收
 
 ## 部署
 
-站点部署在 GitHub Pages：**https://zhilintay97.github.io/lenormand**
+| | 地址 | 角色 |
+|---|---|---|
+| Vercel | **https://lenormand-rho.vercel.app** | 正式站 |
+| GitHub Pages | https://zhilintay97.github.io/lenormand | 备份副本 |
 
-这是 *project* 类型的 Pages，站点位于 `/lenormand/` 子路径下，因此 `tools/build.py` 生成的 `canonical`、`og:url` 和 `sitemap.xml` 全部使用**绝对网址**——根相对路径（`/cards/rider/`）在子路径下会指到用户主页的根目录上去。
+两处都从 `main` 分支自动部署，内容完全相同。`tools/build.py` 顶部的 `SITE_URL` 指向 Vercel，因此**两个副本都把 Vercel 声明为 canonical** —— 搜索引擎的权重会集中到 Vercel，而不是在两个一模一样的站点之间对半分掉。
 
-换域名时只需改 `tools/build.py` 顶部的 `SITE_URL`，然后重跑 `python tools/build.py`。
+所有生成的网址都是**绝对路径**，不用根相对路径（`/cards/rider/`）。这一点在 Pages 副本上是必需的：那是 *project* 类型的 Pages，站点位于 `/lenormand/` 子路径下，根相对路径会指到用户主页根目录去。
+
+换域名时只需改 `SITE_URL`，然后重跑 `python tools/build.py` 并推送，两处会自动重新部署。
 
 ## 仍需人工确认
 

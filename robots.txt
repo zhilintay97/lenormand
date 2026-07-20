@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zhilintay97.github.io/lenormand/sitemap.xml
+Sitemap: https://lenormand-rho.vercel.app/sitemap.xml

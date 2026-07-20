@@ -20,11 +20,17 @@ BODIES = os.path.join(HERE, "zh-bodies")
 PAGES_JSON = os.path.join(HERE, "pages.json")
 
 # ---------------------------------------------------------------- config ----
-# Where the Chinese site is actually served from; used for <link rel="canonical">,
-# the og:/twitter: URLs, sitemap.xml and robots.txt. Note this is a GitHub Pages
-# *project* site, so it lives under a /lenormand/ sub-path — which is why every
-# generated URL must be absolute rather than root-relative.
-SITE_URL = "https://zhilintay97.github.io/lenormand"
+# The canonical home of the site; used for <link rel="canonical">, the og:/twitter:
+# URLs, sitemap.xml and robots.txt. No trailing slash — paths are appended with one.
+#
+# The same content is also served from GitHub Pages at
+# https://zhilintay97.github.io/lenormand as a secondary copy. Both deployments
+# emit this URL as canonical, which consolidates all search-engine signals onto
+# the Vercel site rather than splitting them between two identical copies.
+#
+# Every generated URL is absolute rather than root-relative, so the output stays
+# correct on the Pages copy too, where the site sits under a /lenormand/ sub-path.
+SITE_URL = "https://lenormand-rho.vercel.app"
 SITE_NAME = "雷诺曼"
 OG_IMAGE = SITE_URL + "/images/lenormand_featured.jpg"
 
