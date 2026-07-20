@@ -20,9 +20,11 @@ BODIES = os.path.join(HERE, "zh-bodies")
 PAGES_JSON = os.path.join(HERE, "pages.json")
 
 # ---------------------------------------------------------------- config ----
-# Change this to the domain the Chinese site is actually served from; it is
-# used for <link rel="canonical">, the og:/twitter: URLs and sitemap.xml.
-SITE_URL = "https://lenormand.io"
+# Where the Chinese site is actually served from; used for <link rel="canonical">,
+# the og:/twitter: URLs, sitemap.xml and robots.txt. Note this is a GitHub Pages
+# *project* site, so it lives under a /lenormand/ sub-path — which is why every
+# generated URL must be absolute rather than root-relative.
+SITE_URL = "https://zhilintay97.github.io/lenormand"
 SITE_NAME = "雷诺曼"
 OG_IMAGE = SITE_URL + "/images/lenormand_featured.jpg"
 
@@ -53,7 +55,7 @@ def head(page, p):
   <link rel="icon" type="image/png" href="{p}images/icon.png" />
   <link rel="apple-touch-icon" href="{p}images/icon.png" />
   <meta name="description" content="{d}" />
-  <link rel="canonical" href="/{page['path']}" />
+  <link rel="canonical" href="{url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="{SITE_NAME}" />
   <meta property="og:locale" content="zh_CN" />

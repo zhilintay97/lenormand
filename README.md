@@ -57,10 +57,17 @@ python tools/verify.py           # 验收
 
 `tools/verify.py` 会逐页比对中英文片段的标签序列与 href/src 集合（确保翻译没有动结构和链接）、检查牌义页的 35 条组合是否齐全、扫描残留英文、并验证全站内链与资源路径可达。
 
-## 上线前需要改的两处
+## 部署
 
-1. **`tools/build.py` 顶部的 `SITE_URL`** —— 目前是 `https://lenormand.io`，它决定 `<link rel="canonical">`、og:/twitter: 的 URL 和 `sitemap.xml` 的内容。换成中文站实际的域名后重跑 `python tools/build.py`。
-2. **`contact/`、`privacy-policy/`、`terms-of-service/`、`disclaimer/` 四个页面** —— 译文忠实于英文原版，但法务文本的适用法域不同。正式上线前请让熟悉当地法规的人过一遍，尤其是个人信息处理与责任范围的表述。
+站点部署在 GitHub Pages：**https://zhilintay97.github.io/lenormand**
+
+这是 *project* 类型的 Pages，站点位于 `/lenormand/` 子路径下，因此 `tools/build.py` 生成的 `canonical`、`og:url` 和 `sitemap.xml` 全部使用**绝对网址**——根相对路径（`/cards/rider/`）在子路径下会指到用户主页的根目录上去。
+
+换域名时只需改 `tools/build.py` 顶部的 `SITE_URL`，然后重跑 `python tools/build.py`。
+
+## 仍需人工确认
+
+`contact/`、`privacy-policy/`、`terms-of-service/`、`disclaimer/` 四个页面的译文忠实于英文原版，但法务文本的适用法域不同。请让熟悉当地法规的人过一遍，尤其是个人信息处理与责任范围的表述。
 
 ## 素材来源
 
