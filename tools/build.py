@@ -22,14 +22,13 @@ PAGES_JSON = os.path.join(HERE, "pages.json")
 # ---------------------------------------------------------------- config ----
 # The canonical home of the site; used for <link rel="canonical">, the og:/twitter:
 # URLs, sitemap.xml and robots.txt. No trailing slash — paths are appended with one.
+# Vercel is now the only live deployment: the repository is private, which
+# disables GitHub Pages, so the secondary copy that used to run at
+# https://zhilintay97.github.io/lenormand is gone.
 #
-# The same content is also served from GitHub Pages at
-# https://zhilintay97.github.io/lenormand as a secondary copy. Both deployments
-# emit this URL as canonical, which consolidates all search-engine signals onto
-# the Vercel site rather than splitting them between two identical copies.
-#
-# Every generated URL is absolute rather than root-relative, so the output stays
-# correct on the Pages copy too, where the site sits under a /lenormand/ sub-path.
+# Generated URLs stay absolute rather than root-relative. 404.html requires it
+# (see below), and it keeps the output correct if the site is ever served from a
+# sub-path again — which is what the Pages copy did, under /lenormand/.
 SITE_URL = "https://lenormand-rho.vercel.app"
 SITE_NAME = "雷诺曼"
 OG_IMAGE = SITE_URL + "/images/lenormand_featured.jpg"
@@ -46,8 +45,8 @@ SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "app.js"]
 
 # The 404 page is rendered for whatever path the visitor got wrong, so the
 # browser's base URL is unknown at build time and depth-relative links would
-# break. Every link and asset is therefore absolute, which also keeps the page
-# correct on the GitHub Pages copy, where the site sits under /lenormand/.
+# break — "../../css/style.css" resolves against the bad path. Every link and
+# asset here is therefore absolute.
 NOT_FOUND_TITLE = "页面不存在 | 雷诺曼"
 NOT_FOUND_DESC = "你要找的页面不存在。回到首页，或从这里进入 36 张牌的牌义、七个牌阵与十篇雷诺曼指南。"
 NOT_FOUND_BODY = """    <div class="container">

@@ -59,16 +59,16 @@ python tools/verify.py           # 验收
 
 ## 部署
 
-| | 地址 | 角色 |
-|---|---|---|
-| Vercel | **https://lenormand-rho.vercel.app** | 正式站 |
-| GitHub Pages | https://zhilintay97.github.io/lenormand | 备份副本 |
+站点部署在 Vercel：**https://lenormand-rho.vercel.app**，从 `main` 分支自动部署。
 
-两处都从 `main` 分支自动部署，内容完全相同。`tools/build.py` 顶部的 `SITE_URL` 指向 Vercel，因此**两个副本都把 Vercel 声明为 canonical** —— 搜索引擎的权重会集中到 Vercel，而不是在两个一模一样的站点之间对半分掉。
+本仓库为私有仓库，因此 GitHub Pages 不可用（免费账号的 Pages 需要公开仓库）。曾经作为备份副本运行的 `zhilintay97.github.io/lenormand` 已随之下线。
 
-所有生成的网址都是**绝对路径**，不用根相对路径（`/cards/rider/`）。这一点在 Pages 副本上是必需的：那是 *project* 类型的 Pages，站点位于 `/lenormand/` 子路径下，根相对路径会指到用户主页根目录去。
+`tools/build.py` 顶部的 `SITE_URL` 决定 `canonical`、`og:url`、`sitemap.xml` 与 `robots.txt` 的内容。换域名时改这一行，重跑 `python tools/build.py` 并推送即可。
 
-换域名时只需改 `SITE_URL`，然后重跑 `python tools/build.py` 并推送，两处会自动重新部署。
+生成的网址一律是**绝对路径**，不用根相对路径（`/cards/rider/`）：
+
+- `404.html` 必须如此——它会在访问者输错的**任意路径**下被渲染，此时 `../../css/style.css` 会相对那个错误路径解析，样式和链接全部失效。
+- 万一以后站点又被放到某个子路径下（Pages 副本当初就在 `/lenormand/` 之下），绝对路径不会出问题。
 
 ## 仍需人工确认
 
