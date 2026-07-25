@@ -46,7 +46,7 @@ SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "app.js", "read
 # Optional AI panel, injected only on spread pages (the ones with data-spread).
 # It sits after the drawing UI, inside its own .container for consistent gutters,
 # and stays hidden until the first draw (CSS: body.has-drawn .ai-reading).
-# The server-side interpreter lives at api/interpret.py; the browser never sees
+# The server-side interpreter lives at api/interpret.js; the browser never sees
 # the API key. See js/reading-ai.js.
 AI_PANEL_HTML = """    <div class="container">
       <section class="ai-reading" aria-label="AI 深入解读">
