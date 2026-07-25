@@ -41,26 +41,7 @@ NAV = [
     ("guides/", "指南", "Guides"),
 ]
 
-SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "app.js", "reading-ai.js"]
-
-# Optional AI panel, injected only on spread pages (the ones with data-spread).
-# It sits after the drawing UI, inside its own .container for consistent gutters,
-# and stays hidden until the first draw (CSS: body.has-drawn .ai-reading).
-# The server-side interpreter lives at api/interpret.js; the browser never sees
-# the API key. See js/reading-ai.js.
-AI_PANEL_HTML = """    <div class="container">
-      <section class="ai-reading" aria-label="AI 深入解读">
-        <h2>让 AI 深入解读</h2>
-        <p class="ai-intro">写下你此刻真正想问的问题，让 AI 结合上面这次牌阵，给出一段更完整的解读。</p>
-        <form class="ai-form" id="aiForm">
-          <textarea id="aiQuestion" maxlength="500"
-            placeholder="例如：这段关系接下来会怎么发展？我该不该换工作？"></textarea>
-          <button type="submit" class="btn ai-submit" id="aiAskBtn">让 AI 解读这次牌阵</button>
-        </form>
-        <div class="ai-answer" id="aiAnswer" aria-live="polite"></div>
-        <p class="ai-disclaimer">AI 解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
-      </section>
-    </div>"""
+SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "app.js"]
 
 # The 404 page is rendered for whatever path the visitor got wrong, so the
 # browser's base URL is unknown at build time and depth-relative links would
@@ -210,11 +191,8 @@ def footer(p):
 def render(page, body, prefix=None):
     p = prefix if prefix is not None else "../" * page["depth"]
     attrs = (" " + page["body_attrs"]) if page.get("body_attrs") else ""
-    is_spread = bool(page.get("body_attrs"))
-    scripts = SPREAD_SCRIPTS if is_spread else ["app.js"]
+    scripts = SPREAD_SCRIPTS if page.get("body_attrs") else ["app.js"]
     script_tags = "\n".join(f'  <script src="{p}js/{s}"></script>' for s in scripts)
-    # Spread pages get the optional AI panel appended inside <main>.
-    main_body = body.rstrip() + ("\n\n" + AI_PANEL_HTML if is_spread else "")
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -233,7 +211,7 @@ def render(page, body, prefix=None):
 {header(page, p)}
 
   <main>
-{main_body}
+{body.rstrip()}
   </main>
 
 {footer(p)}
