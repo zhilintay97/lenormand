@@ -7,6 +7,11 @@ tools/en-bodies/
 __pycache__/
 *.pyc
 
+# Secrets — the Claude API key lives in Vercel env vars, never in the repo.
+.env
+.env.*
+!.env.example
+
 # Local tooling settings, not part of the site
 .claude/
 
