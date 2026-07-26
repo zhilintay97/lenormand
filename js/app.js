@@ -170,6 +170,19 @@
       renderInterpretation(spread, drawn);
       document.body.classList.add("has-drawn");
       if (drawBtn) drawBtn.textContent = "重新洗牌并抽取";
+
+      // Expose the current draw so the optional AI panel (js/reading-ai.js)
+      // can send it to the server-side interpreter. This is the whole draw,
+      // as a plain data object — no DOM coupling.
+      window.__lenoReading = {
+        spreadName: spread.name,
+        cards: drawn.map((card, i) => ({
+          position: spread.positions[i].label,
+          name: card.name,
+          keywords: card.keywords,
+        })),
+      };
+      document.dispatchEvent(new CustomEvent("leno:drawn"));
     }, totalDealMs);
   }
 
