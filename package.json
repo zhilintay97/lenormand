@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "name": "lenormand",
+  "version": "1.0.0",
+  "description": "Simplified Chinese Lenormand site (static) + optional serverless AI reading endpoint."
+}
