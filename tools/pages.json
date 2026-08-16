@@ -1,10 +1,10 @@
 [
   {
-    "path": "",
-    "depth": 0,
+    "path": "lenormand/",
+    "depth": 1,
     "title": "Free Lenormand Reading Online | Lenormand",
     "description": "Get a free Lenormand reading online. Draw from the full 36-card Petit Lenormand deck, choose from seven spreads, or look up any card's meaning. Guided readings, no sign-up, no email.",
-    "nav_active": "Home",
+    "nav_active": "Lenormand",
     "body_attrs": "",
     "scripts": [
       "app.js"

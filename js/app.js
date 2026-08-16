@@ -142,9 +142,49 @@
 
   const drawBtn = document.getElementById("drawBtn");
 
-  function performDraw() {
-    const drawn = drawCards(deck, spread.cards);
+  // 大牌阵（36 张）手动挑牌没意义，超过这个数就直接自动发牌。
+  const PICKER_MAX = 12;
 
+  // 挑牌容器（首次用到时插在牌阵网格前面，避免改动每个牌阵页的 HTML）。
+  function ensurePicker() {
+    let p = document.getElementById("cardPicker");
+    if (!p) {
+      p = document.createElement("div");
+      p.id = "cardPicker";
+      p.className = "leno-picker";
+      const grid = document.getElementById("spreadGrid");
+      grid.parentNode.insertBefore(p, grid);
+    }
+    return p;
+  }
+
+  // 把这次抽牌存进本地记录（与塔罗共用 boyue.records，供日历/记录页读取）。
+  function saveLenoRecord(drawn) {
+    try {
+      const d = new Date();
+      const date = d.getFullYear() + "-" +
+        String(d.getMonth() + 1).padStart(2, "0") + "-" +
+        String(d.getDate()).padStart(2, "0");
+      const all = JSON.parse(localStorage.getItem("boyue.records") || "[]");
+      all.push({
+        ts: d.getTime(),
+        date: date,
+        system: "lenormand",
+        mode: "spread",
+        spread: spread.name,
+        spreadSlug: spread.slug,
+        cards: drawn.map((card, i) => ({
+          slug: card.slug,
+          name: card.name,
+          position: spread.positions[i] ? spread.positions[i].label : "",
+        })),
+      });
+      localStorage.setItem("boyue.records", JSON.stringify(all));
+    } catch (e) { /* localStorage 不可用时静默跳过 */ }
+  }
+
+  // 把抽到的牌依次翻进牌阵，并给出解读（原来的自动发牌逻辑）。
+  function dealSpread(drawn) {
     // Reset to backs first so users see the cards "go face-down"
     // before the new deal begins.
     renderSpread(spread, null);
@@ -183,7 +223,40 @@
         })),
       };
       document.dispatchEvent(new CustomEvent("leno:drawn"));
+      saveLenoRecord(drawn);
     }, totalDealMs);
+  }
+
+  function performDraw() {
+    // 大牌阵或缺少挑牌组件时，退回自动发牌。
+    if (typeof CardPicker === "undefined" || spread.cards > PICKER_MAX) {
+      dealSpread(drawCards(deck, spread.cards));
+      return;
+    }
+
+    // 手动挑牌：铺开整副 36 张背面牌，滑动、点选 spread.cards 张再翻开。
+    const picker = ensurePicker();
+    const grid = document.getElementById("spreadGrid");
+    const interp = document.getElementById("interpretation");
+    document.body.classList.remove("has-drawn");
+    if (grid) grid.style.display = "none";
+    if (interp) interp.classList.remove("visible");
+    picker.style.display = "";
+
+    CardPicker.mount(picker, {
+      cards: drawCards(deck, deck.length), // 整副洗好；第 i 格 => 这张牌
+      count: spread.cards,
+      hintText: `从 ${deck.length} 张里任选 ${spread.cards} 张`,
+      onReveal: (picked) => {
+        picker.style.display = "none";
+        picker.innerHTML = "";
+        if (grid) grid.style.display = "";
+        dealSpread(picked);
+      },
+    });
+
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    picker.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   }
 
   if (drawBtn) drawBtn.addEventListener("click", performDraw);

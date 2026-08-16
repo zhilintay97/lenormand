@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日历与记录 · 你的抽牌痕迹 | 卜月</title>
+  <link rel="icon" type="image/png" href="../images/icon.png" />
+  <link rel="apple-touch-icon" href="../images/icon.png" />
+  <meta name="description" content="卜月的日历与记录：把雷诺曼和塔罗的抽牌都记在本地，一个月历标出哪天抽过，回看每一次抽了什么。只存在你自己的浏览器里。" />
+  <link rel="canonical" href="https://lenormand-rho.vercel.app/records/" />
+  <meta name="robots" content="noindex" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="卜月" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="日历与记录 · 你的抽牌痕迹 | 卜月" />
+  <meta property="og:description" content="雷诺曼与塔罗的抽牌，都记在本地。月历标出哪天抽过，回看每一次。" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="bg-layer">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="bg-stars"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="../">
+        <span class="brand-mark">✴</span>
+        <span>卜月</span>
+      </a>
+      <button class="nav-toggle" aria-label="展开或收起导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="../lenormand/">雷诺曼</a>
+        <a href="../tarot/">塔罗</a>
+        <a href="../cards/">牌义</a>
+        <a href="../decks/">牌组</a>
+        <a href="../guides/">指南</a>
+        <a href="../records/" class="active">记录</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="page-head fade-up is-visible">
+        <div class="hero-eyebrow">日历 · 记录</div>
+        <h1>你的<em>抽牌痕迹</em></h1>
+        <div class="hero-divider"><span>✦</span></div>
+        <p class="intro">
+          雷诺曼和塔罗抽过的牌，都留在这里。月历上有标点的日子表示那天抽过牌，
+          点一下就能看那天的记录。所有内容只存在你自己的浏览器里，不上传、不注册。
+        </p>
+      </section>
+
+      <div class="calendar" id="calendar"></div>
+
+      <div class="records-bar">
+        <span class="records-title" id="recordsTitle">全部记录</span>
+        <button class="btn" id="recordsAll">看全部</button>
+      </div>
+      <div class="records-list" id="recordsList"></div>
+
+      <p class="ai-disclaimer">记录仅保存在本机浏览器（localStorage）。清除浏览器数据或更换设备后会消失。</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 卜月</span>
+        <span>仅供自省与娱乐之用</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/records.js"></script>
+</body>
+</html>

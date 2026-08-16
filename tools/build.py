@@ -30,18 +30,19 @@ PAGES_JSON = os.path.join(HERE, "pages.json")
 # (see below), and it keeps the output correct if the site is ever served from a
 # sub-path again — which is what the Pages copy did, under /lenormand/.
 SITE_URL = "https://lenormand-rho.vercel.app"
-SITE_NAME = "雷诺曼"
+SITE_NAME = "卜月"
 OG_IMAGE = SITE_URL + "/images/lenormand_featured.jpg"
 
 NAV = [
-    ("", "首页", "Home"),
+    ("lenormand/", "雷诺曼", "Lenormand"),
+    ("tarot/", "塔罗", "Tarot"),
     ("cards/", "牌义", "Cards"),
-    ("spreads/", "牌阵", "Spreads"),
     ("decks/", "牌组", "Decks"),
     ("guides/", "指南", "Guides"),
+    ("records/", "记录", "Records"),
 ]
 
-SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "app.js", "reading-ai.js"]
+SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "card-picker.js", "app.js", "reading-ai.js"]
 
 # Optional AI panel, injected only on spread pages (the ones with data-spread).
 # It sits after the drawing UI, inside its own .container for consistent gutters,
@@ -165,36 +166,17 @@ def footer(p):
             <span class="brand-mark">✴</span>
             <span>{SITE_NAME}</span>
           </a>
-          <p>一个免费的雷诺曼占卜网站 —— 完整的 36 张牌义，以及安静的线上抽牌。</p>
+          <p>安静的线上卡牌占卜 —— 雷诺曼与塔罗，完整牌义，无需注册。</p>
         </div>
 
         <div class="footer-col">
           <div class="footer-col-title">探索</div>
           <ul>
+            <li><a href="{p}lenormand/">雷诺曼</a></li>
+            <li><a href="{p}tarot/">塔罗</a></li>
             <li><a href="{p}cards/">牌义</a></li>
-            <li><a href="{p}spreads/">牌阵</a></li>
-            <li><a href="{p}spreads/grand-tableau/">大牌阵</a></li>
             <li><a href="{p}decks/">牌组</a></li>
             <li><a href="{p}guides/">指南</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <div class="footer-col-title">网站</div>
-          <ul>
-            <li><a href="{p}">首页</a></li>
-            <li><a href="{p}faq/">常见问题</a></li>
-            <li><a href="{p}about/">关于我们</a></li>
-            <li><a href="{p}contact/">联系我们</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <div class="footer-col-title">条款</div>
-          <ul>
-            <li><a href="{p}privacy-policy/">隐私政策</a></li>
-            <li><a href="{p}terms-of-service/">服务条款</a></li>
-            <li><a href="{p}disclaimer/">免责声明</a></li>
           </ul>
         </div>
       </div>
@@ -277,9 +259,13 @@ def main():
         f.write(render(not_found, NOT_FOUND_BODY.format(p=absolute), prefix=absolute))
 
     # ---- sitemap.xml ----
+    # The landing ("") and the tarot page are hand-written (not in pages.json),
+    # so add them explicitly alongside the generated pages.
+    # records/ is noindex (per-user local data), so it stays out of the sitemap.
+    STATIC_PATHS = ["", "tarot/"]
+    all_paths = sorted(set(STATIC_PATHS + [pg["path"] for pg in pages]))
     locs = "\n".join(
-        "  <url><loc>%s/%s</loc></url>" % (SITE_URL, pg["path"])
-        for pg in sorted(pages, key=lambda x: x["path"])
+        "  <url><loc>%s/%s</loc></url>" % (SITE_URL, path) for path in all_paths
     )
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n'

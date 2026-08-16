@@ -1,25 +1,25 @@
 :root {
   /* ---------- COLOUR PALETTE — vintage midnight, warm-leaning ---------- */
-  --bg-1: #0a0e15;        /* deep base, slight warmth so it doesn't feel grey */
-  --bg-2: #121a2a;        /* mid gradient, richer than the washed slate */
-  --bg-3: #1a2840;        /* top gradient, holds enough blue depth to give shape */
+  --bg-1: #172230;        /* main background — deep navy slate, not grey, not black */
+  --bg-2: #1d2938;        /* secondary background / card surface */
+  --bg-3: #233244;        /* elevated tone — top-of-page glow, raised cards */
 
-  --accent: #d4b06b;
-  --accent-soft: #ecd8a5;
-  --accent-deep: #a08549;
-  --accent-glow: rgba(212, 176, 107, 0.4);
+  --accent: #d6ae68;      /* champagne gold, low saturation (less yellow/orange) */
+  --accent-soft: #e4c17b; /* hover / highlight gold */
+  --accent-deep: #ae8f55; /* muted deeper gold for small marks */
+  --accent-glow: rgba(214, 174, 104, 0.28);  /* very subtle, never neon */
 
-  --blue: #4d6685;        /* mid blue with character — orbs need saturation */
-  --blue-deep: #283c57;
+  --blue: #33506e;        /* muted steel-blue — gives the orb a navy shape, not grey */
+  --blue-deep: #233244;
 
-  --text: #ebe5d8;        /* warm white, slightly less yellow than before */
-  --text-muted: #a3a094;
-  --text-faint: #6e6a60;
+  --text: #f0ece3;        /* primary text — warm off-white */
+  --text-muted: #b9b5ac;  /* secondary text */
+  --text-faint: #8f9296;  /* faint hints */
 
-  --card-bg: #14202f;
-  --card-bg-hover: #1c2a3d;
-  --card-border: rgba(212, 176, 107, 0.22);  /* subtle gold — complements the warm card art */
-  --card-border-hover: rgba(212, 176, 107, 0.5);
+  --card-bg: #1d2938;
+  --card-bg-hover: #233244;
+  --card-border: #34475a;                          /* slate hairline — modern, structural */
+  --card-border-hover: rgba(214, 174, 104, 0.42);  /* cards warm to gold on hover */
 
   --font-display: 'Cinzel', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', 'Georgia', serif;
   --font-serif: 'Cormorant Garamond', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', 'Georgia', serif;
@@ -29,8 +29,8 @@
   --radius-md: 10px;
   --radius-lg: 16px;
 
-  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 8px 32px rgba(212, 176, 107, 0.2);
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 8px 32px rgba(214, 174, 104, 0.14);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -136,7 +136,7 @@ a:hover { color: var(--accent-soft); }
   z-index: 100;
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
-  background: rgba(10, 14, 21, 0.78);
+  background: rgba(23, 34, 48, 0.78);
   border-bottom: 1px solid rgba(212, 176, 107, 0.08);
 }
 
@@ -305,7 +305,7 @@ button, .btn {
   position: relative;
   display: inline-block;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
-  color: #0a1228;
+  color: #172230;
   border: none;
   padding: 0.95rem 2.4rem;
   font-family: var(--font-sans);
@@ -317,8 +317,8 @@ button, .btn {
   text-transform: uppercase;
   transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
   box-shadow:
-    0 4px 20px rgba(212, 176, 107, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 4px 18px rgba(214, 174, 104, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
   overflow: hidden;
 }
 
@@ -334,9 +334,9 @@ button::before {
 button:hover, .btn:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 8px 28px rgba(212, 176, 107, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  filter: brightness(1.05);
+    0 8px 24px rgba(214, 174, 104, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  filter: brightness(1.06);
   text-decoration: none;
 }
 
@@ -403,7 +403,7 @@ button:active { transform: translateY(0); }
   margin-bottom: 0.8rem;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: linear-gradient(160deg, #163055 0%, #0a1632 100%);
+  background: linear-gradient(160deg, #233244 0%, #172230 100%);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .card-face img {
@@ -481,7 +481,7 @@ button:active { transform: translateY(0); }
   z-index: 1;
   max-width: 640px;
   margin: 2rem auto 0;
-  background: rgba(20, 32, 47, 0.5);
+  background: rgba(29, 41, 56, 0.5);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
@@ -613,7 +613,7 @@ button:active { transform: translateY(0); }
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: linear-gradient(160deg, #163055 0%, #0a1632 100%);
+  background: linear-gradient(160deg, #233244 0%, #172230 100%);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -718,7 +718,7 @@ button:active { transform: translateY(0); }
   position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(160deg, rgba(20, 32, 47, 0.7), rgba(10, 14, 21, 0.7));
+  background: linear-gradient(160deg, rgba(29, 41, 56, 0.7), rgba(23, 34, 48, 0.7));
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
@@ -744,7 +744,7 @@ button:active { transform: translateY(0); }
   border-color: var(--card-border-hover);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 176, 107, 0.1);
   text-decoration: none;
-  background: linear-gradient(160deg, rgba(28, 42, 61, 0.8), rgba(18, 26, 42, 0.8));
+  background: linear-gradient(160deg, rgba(35, 50, 68, 0.8), rgba(23, 34, 48, 0.8));
 }
 
 .home-tile:hover::before { opacity: 1; }
@@ -773,7 +773,7 @@ button:active { transform: translateY(0); }
     repeating-linear-gradient(45deg,
       rgba(212, 176, 107, 0.08) 0 5px,
       transparent 5px 10px),
-    linear-gradient(135deg, #163055 0%, #28467a 50%, #163055 100%);
+    linear-gradient(135deg, #233244 0%, #34506e 50%, #233244 100%);
 }
 
 .tile-card-back-1 { transform: rotate(-8deg) translateX(-8px); z-index: 1; }
@@ -784,7 +784,7 @@ button:active { transform: translateY(0); }
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 30%, rgba(212, 176, 107, 0.15) 0%, transparent 60%),
-    linear-gradient(160deg, #1a2a4a 0%, #0e1830 100%);
+    linear-gradient(160deg, #233244 0%, #172230 100%);
 }
 
 .home-tile:hover .tile-card-back-1 { transform: rotate(-14deg) translateX(-18px); }
@@ -917,7 +917,7 @@ button:active { transform: translateY(0); }
   border-radius: 12px;
   border: 1px solid var(--card-border);
   overflow: hidden;
-  background: linear-gradient(160deg, #163055 0%, #0a1632 100%);
+  background: linear-gradient(160deg, #233244 0%, #172230 100%);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
               0 0 0 1px rgba(212, 176, 107, 0.15);
   position: relative;
@@ -1067,7 +1067,7 @@ button:active { transform: translateY(0); }
 }
 .combo-list li {
   padding: 0.85rem 1rem;
-  background: rgba(20, 32, 47, 0.4);
+  background: rgba(29, 41, 56, 0.4);
   border: 1px solid var(--card-border);
   border-radius: 10px;
   font-family: var(--font-serif);
@@ -1079,7 +1079,7 @@ button:active { transform: translateY(0); }
 }
 .combo-list li:hover {
   border-color: rgba(212, 176, 107, 0.4);
-  background: rgba(28, 42, 61, 0.55);
+  background: rgba(35, 50, 68, 0.55);
 }
 .combo-list strong {
   font-family: var(--font-display);
@@ -1095,7 +1095,7 @@ button:active { transform: translateY(0); }
   max-width: 720px;
   margin: 0 auto 3rem;
   padding: 1.75rem 2rem;
-  background: rgba(20, 32, 47, 0.5);
+  background: rgba(29, 41, 56, 0.5);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
@@ -1161,7 +1161,7 @@ button:active { transform: translateY(0); }
   flex-direction: column;
   gap: 0.25rem;
   padding: 1rem 1.5rem;
-  background: rgba(20, 32, 47, 0.4);
+  background: rgba(29, 41, 56, 0.4);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   text-decoration: none;
@@ -1173,7 +1173,7 @@ button:active { transform: translateY(0); }
   border-color: var(--accent);
   transform: translateY(-2px);
   text-decoration: none;
-  background: rgba(28, 42, 61, 0.6);
+  background: rgba(35, 50, 68, 0.6);
 }
 
 .card-nav-link.next { text-align: right; align-items: flex-end; }
@@ -1358,7 +1358,7 @@ button:active { transform: translateY(0); }
     justify-content: flex-start;
     gap: 0.35rem;
     padding: 1.25rem 1rem 2rem;
-    background: rgba(13, 17, 28, 0.98);
+    background: rgba(23, 34, 48, 0.98);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     overflow-y: auto;
@@ -1479,7 +1479,7 @@ p {
   z-index: 1;
   max-width: 640px;
   margin: 1.75rem auto 0;
-  background: rgba(20, 32, 47, 0.5);
+  background: rgba(29, 41, 56, 0.5);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
@@ -1520,7 +1520,7 @@ body.has-drawn .ai-reading {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
-  background: rgba(10, 14, 21, 0.55);
+  background: rgba(23, 34, 48, 0.55);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   transition: border-color 0.2s ease;
@@ -1567,3 +1567,328 @@ body.has-drawn .ai-reading {
 @media (max-width: 560px) {
   .ai-reading { padding: 1.4rem 1.15rem; }
 }
+
+/* ================= 塔罗 App（滑动挑牌）================= */
+.tarot-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0 auto 1.75rem;
+  max-width: 420px;
+}
+.tarot-tab {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  background: rgba(29, 41, 56, 0.5);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.tarot-tab.active {
+  color: var(--bg-1);
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+  border-color: transparent;
+  font-weight: 600;
+}
+.tarot-panel { display: none; }
+.tarot-panel.active { display: block; animation: fadeUp 0.5s ease-out; }
+
+.tarot-card-block {
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(29, 41, 56, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+}
+.td-date {
+  text-align: center;
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* ---- 挑牌区 ---- */
+.picker-hint {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0 0 0.9rem;
+}
+.picker-actions { text-align: center; margin-top: 1.25rem; }
+
+/* ---- 抓拽式扇形卡组（coverflow）---- */
+.card-carousel-viewport {
+  position: relative;
+  height: 262px;
+  margin: 0 -1.5rem;               /* 顶到卡片块边缘，牌堆铺得更宽 */
+  perspective: 1100px;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;             /* 横拖拨牌堆；竖向仍交给浏览器滚动页面 */
+  outline: none;
+}
+.card-carousel-viewport[data-dragging] { cursor: grabbing; }
+.card-carousel-viewport:focus-visible { box-shadow: inset 0 0 0 1px var(--accent-glow); }
+.card-carousel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+.carousel-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 96px;
+  height: 150px;
+  will-change: transform, filter, opacity;
+  transition: filter 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.card-carousel-viewport[data-dragging] .carousel-card { transition: none; }
+
+/* ---- 卡背 ---- */
+.pcard-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(150deg, #233244, #172230);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+.carousel-card.chosen .pcard-back {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow), 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+.pback-frame {
+  width: 82%;
+  height: 86%;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pback-mark { color: var(--accent-deep); font-size: 1.4rem; }
+
+/* ---- 卡面（真实莱德·韦特图）---- */
+.tcard-face {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--card-border-hover);
+  background: #1d2938;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+}
+.tface-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.tcard-face.reversed .tface-img { transform: rotate(180deg); }
+.tface-tag {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 4px 4px 5px;
+}
+
+/* ---- 翻开后的解读 ---- */
+.reading-row {
+  display: flex;
+  gap: clamp(0.85rem, 4.5vw, 1.6rem);
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 0.5rem 0 1.6rem;
+}
+.reading-col { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; width: clamp(86px, 26vw, 112px); }
+.reading-row.single { margin-top: 0.25rem; }
+.reading-row.single .reading-col { width: clamp(132px, 44vw, 168px); }
+.reading-pos { font-family: var(--font-display); font-size: 0.9rem; letter-spacing: 0.04em; color: var(--accent); }
+.reading-kw { font-family: var(--font-sans); font-size: 0.72rem; color: var(--text-muted); text-align: center; line-height: 1.5; }
+.reading { display: none; text-align: center; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.8; color: var(--text); }
+.reading.visible { display: block; animation: fadeUp 0.5s ease-out; }
+.reading-q { color: var(--text-muted); font-size: 0.95rem; font-family: var(--font-sans); }
+.reading-sum { margin: 0.5rem 0; }
+.reading-note { color: var(--text-faint); font-family: var(--font-sans); font-size: 0.82rem; margin-top: 0.75rem; }
+
+/* 分块卡片式解读（参考 june 的排版） */
+.reading-body {
+  text-align: left;
+  max-width: 520px;
+  margin: 1.3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.reading-cat {
+  align-self: center;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--card-border-hover);
+  border-radius: 999px;
+  margin-bottom: 0.2rem;
+}
+.reading-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.05rem;
+}
+.reading-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+.reading-pos-inline {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  padding: 0.12rem 0.55rem;
+  border: 1px solid var(--card-border-hover);
+  border-radius: 999px;
+}
+.reading-card-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--accent-soft);
+}
+.reading-card-body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+.reading-card--synth {
+  border-color: var(--card-border-hover);
+  background: linear-gradient(160deg, rgba(35, 50, 68, 0.5), var(--card-bg));
+}
+.reading-card-body strong { color: var(--accent-soft); font-weight: 600; }
+
+/* ---------- 落地页（双入口）---------- */
+.landing-header { border-bottom: none; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.landing-header .site-header-inner { justify-content: center; }
+.landing-hero { text-align: center; padding: 3rem 0 1rem; max-width: 640px; margin: 0 auto; }
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+  max-width: 920px;
+  margin: 2.5rem auto 0;
+}
+.entry-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.7rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.entry-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-soft);
+}
+.entry-card-mark { font-size: 1.9rem; color: var(--accent); line-height: 1; }
+.entry-card-sub {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 0.45rem;
+}
+.entry-card-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--text); }
+.entry-card-desc { font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.65; color: var(--text-muted); margin: 0.2rem 0 0.7rem; }
+.entry-card-go { margin-top: auto; font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.08em; color: var(--accent); }
+.entry-card:hover .entry-card-go { color: var(--accent-soft); }
+.landing-records { text-align: center; margin-top: 1.6rem; }
+.landing-records a { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--text-muted); }
+.landing-records a:hover { color: var(--accent); }
+
+/* 雷诺曼牌阵页的挑牌区 */
+.leno-picker { margin: 0.5rem 0 1.75rem; }
+
+/* ---------- 日历 + 记录页 ---------- */
+.calendar {
+  max-width: 460px;
+  margin: 1.5rem auto 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1rem 1.25rem;
+}
+.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.85rem; }
+.cal-title { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04em; color: var(--text); }
+.cal-nav {
+  background: none; border: 1px solid var(--card-border); color: var(--accent);
+  width: 34px; height: 34px; padding: 0; border-radius: 50%;
+  font-size: 1.1rem; line-height: 1; text-transform: none; letter-spacing: 0; box-shadow: none;
+}
+.cal-nav:hover { border-color: var(--card-border-hover); background: rgba(214, 174, 104, 0.08); transform: none; box-shadow: none; filter: none; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-weekday { text-align: center; font-family: var(--font-sans); font-size: 0.72rem; color: var(--text-faint); padding: 4px 0; }
+.cal-cell {
+  position: relative; aspect-ratio: 1; padding: 0;
+  background: none; border: 1px solid transparent; border-radius: 8px;
+  color: var(--text-faint); font-family: var(--font-sans);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  text-transform: none; letter-spacing: 0; box-shadow: none; cursor: default;
+}
+.cal-cell.cal-empty { border: none; }
+.cal-cell.has-records { color: var(--text); cursor: pointer; }
+.cal-cell.has-records:hover { border-color: var(--card-border-hover); background: none; transform: none; box-shadow: none; filter: none; }
+.cal-cell.is-today { box-shadow: inset 0 0 0 1px var(--accent-glow); }
+.cal-cell.is-selected { background: rgba(214, 174, 104, 0.12); border-color: var(--accent); }
+.cal-cell[disabled] { opacity: 1; }
+.cal-num { font-size: 0.85rem; }
+.cal-dots { display: flex; gap: 3px; height: 6px; align-items: center; }
+.cal-dot { width: 5px; height: 5px; border-radius: 50%; }
+.cal-dot.sys-tarot { background: var(--accent); }
+.cal-dot.sys-leno { background: var(--blue); }
+
+.records-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 520px; margin: 1.75rem auto 0.6rem; }
+.records-title { font-family: var(--font-display); font-size: 1rem; color: var(--text); }
+#recordsAll { padding: 0.45rem 1.1rem; font-size: 0.76rem; }
+.records-list { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.7rem; }
+.record-item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 0.85rem 1rem; }
+.record-head { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.record-badge { font-family: var(--font-sans); font-size: 0.7rem; padding: 0.12rem 0.5rem; border-radius: 999px; letter-spacing: 0.05em; }
+.record-badge.sys-tarot { color: var(--accent); border: 1px solid var(--card-border-hover); }
+.record-badge.sys-leno { color: #9db8d8; border: 1px solid rgba(77, 102, 133, 0.55); }
+.record-mode { font-family: var(--font-display); font-size: 0.92rem; color: var(--accent-soft); }
+.record-cat { font-family: var(--font-sans); font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--card-border); border-radius: 999px; padding: 0.05rem 0.45rem; }
+.record-date { margin-left: auto; font-family: var(--font-sans); font-size: 0.72rem; color: var(--text-faint); }
+.record-q { font-family: var(--font-serif); font-size: 0.98rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+.record-cards { font-family: var(--font-serif); font-size: 1rem; color: var(--text); line-height: 1.6; }
+.records-empty { text-align: center; color: var(--text-faint); font-family: var(--font-sans); padding: 2rem 1rem; }

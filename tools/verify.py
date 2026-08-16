@@ -110,7 +110,7 @@ def main():
         for key in ("title", "description"):
             if not meta.get(key, "").strip():
                 fail(name, "coverage", "meta.%s is empty" % key)
-        if meta.get("title") and not meta["title"].rstrip().endswith("雷诺曼"):
+        if meta.get("title") and not meta["title"].rstrip().endswith("卜月"):
             fail(name, "coverage", "title does not end with the site suffix: %r" % meta["title"])
 
         en, zh = parse(load(en_f)), parse(load(zh_f))

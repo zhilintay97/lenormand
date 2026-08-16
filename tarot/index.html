@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>塔罗占卜 · 每日一牌与问题占卜 | 卜月</title>
+  <link rel="icon" type="image/png" href="../images/icon.png" />
+  <link rel="apple-touch-icon" href="../images/icon.png" />
+  <meta name="description" content="卜月塔罗：抽一张今日牌，或就一个问题抽三张牌。滑动牌堆，点选你想要的牌，翻开看它讲了什么。" />
+  <link rel="canonical" href="https://lenormand-rho.vercel.app/tarot/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="卜月" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="塔罗占卜 · 每日一牌与问题占卜 | 卜月" />
+  <meta property="og:description" content="抽一张今日牌，或就一个问题抽三张牌。滑动牌堆，点选你想要的牌。" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="tarot-body">
+  <div class="bg-layer">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="bg-stars"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="../">
+        <span class="brand-mark">✴</span>
+        <span>卜月</span>
+      </a>
+      <button class="nav-toggle" aria-label="展开或收起导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="../lenormand/">雷诺曼</a>
+        <a href="../tarot/" class="active">塔罗</a>
+        <a href="../cards/">牌义</a>
+        <a href="../decks/">牌组</a>
+        <a href="../guides/">指南</a>
+        <a href="../records/">记录</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="page-head fade-up is-visible">
+        <div class="hero-eyebrow">塔罗 · TAROT</div>
+        <h1>塔罗<em>占卜</em></h1>
+        <div class="hero-divider"><span>✦</span></div>
+        <p class="intro">
+          抽一张今日牌开启这一天，或就一个正在意的问题抽三张牌。
+          滑动下面的牌堆，点选你想要的牌，再翻开看它讲了什么。
+        </p>
+      </section>
+
+      <div class="tarot-tabs" role="tablist">
+        <button class="tarot-tab active" data-panel="tarotDaily">每日一牌</button>
+        <button class="tarot-tab" data-panel="tarotQuestion">问题占卜</button>
+      </div>
+
+      <!-- 每日一牌 -->
+      <section class="tarot-panel active" id="tarotDaily">
+        <div class="tarot-card-block">
+          <div class="td-date" id="tdDate"></div>
+          <div class="picker-stage" id="tdStage"></div>
+          <div class="reading" id="tdResult"></div>
+        </div>
+      </section>
+
+      <!-- 问题占卜 -->
+      <section class="tarot-panel" id="tarotQuestion">
+        <div class="tarot-card-block">
+          <div class="ai-form" style="margin-bottom:1.25rem">
+            <textarea id="tqInput" maxlength="200"
+              placeholder="写下你想问的问题，例如：这段关系接下来会怎么发展？"></textarea>
+            <button class="btn" id="tqStart" style="align-self:center">开始抽牌</button>
+          </div>
+          <div class="picker-stage" id="tqStage"></div>
+          <div class="reading" id="tqResult"></div>
+        </div>
+      </section>
+
+      <p class="ai-disclaimer">塔罗解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 卜月</span>
+        <span>仅供自省与娱乐之用</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/tarot-deck.js"></script>
+  <script src="../js/card-picker.js"></script>
+  <script src="../js/tarot-app.js"></script>
+</body>
+</html>
