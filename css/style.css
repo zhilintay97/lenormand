@@ -1,8 +1,8 @@
 :root {
   /* ---------- COLOUR PALETTE — vintage midnight, warm-leaning ---------- */
-  --bg-1: #172230;        /* main background — deep navy slate, not grey, not black */
-  --bg-2: #1d2938;        /* secondary background / card surface */
-  --bg-3: #233244;        /* elevated tone — top-of-page glow, raised cards */
+  --bg-1: #0c1424;        /* main background — deep navy slate, not grey, not black */
+  --bg-2: #121c30;        /* secondary background / card surface */
+  --bg-3: #18263f;        /* elevated tone — top-of-page glow, raised cards */
 
   --accent: #d6ae68;      /* champagne gold, low saturation (less yellow/orange) */
   --accent-soft: #e4c17b; /* hover / highlight gold */
@@ -10,15 +10,15 @@
   --accent-glow: rgba(214, 174, 104, 0.28);  /* very subtle, never neon */
 
   --blue: #33506e;        /* muted steel-blue — gives the orb a navy shape, not grey */
-  --blue-deep: #233244;
+  --blue-deep: #18263f;
 
   --text: #f0ece3;        /* primary text — warm off-white */
   --text-muted: #b9b5ac;  /* secondary text */
   --text-faint: #8f9296;  /* faint hints */
 
-  --card-bg: #1d2938;
-  --card-bg-hover: #233244;
-  --card-border: #34475a;                          /* slate hairline — modern, structural */
+  --card-bg: #121c30;
+  --card-bg-hover: #18263f;
+  --card-border: #2a3a52;                          /* slate hairline — modern, structural */
   --card-border-hover: rgba(214, 174, 104, 0.42);  /* cards warm to gold on hover */
 
   --font-display: 'Cinzel', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', 'Georgia', serif;
@@ -136,7 +136,7 @@ a:hover { color: var(--accent-soft); }
   z-index: 100;
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
-  background: rgba(23, 34, 48, 0.78);
+  background: rgba(12, 20, 36, 0.78);
   border-bottom: 1px solid rgba(212, 176, 107, 0.08);
 }
 
@@ -167,18 +167,16 @@ a:hover { color: var(--accent-soft); }
 .brand:hover { color: var(--accent-soft); }
 
 .brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--accent);
-  font-size: 0.9rem;
-  line-height: 1;
-  background: rgba(212, 176, 107, 0.05);
-  box-shadow: 0 0 12px rgba(212, 176, 107, 0.15), inset 0 0 8px rgba(212, 176, 107, 0.1);
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  background: url("/images/brand-logo.png") center / contain no-repeat;
+  box-shadow: none;
 }
 
 .main-nav {
@@ -305,7 +303,7 @@ button, .btn {
   position: relative;
   display: inline-block;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
-  color: #172230;
+  color: #0c1424;
   border: none;
   padding: 0.95rem 2.4rem;
   font-family: var(--font-sans);
@@ -403,7 +401,7 @@ button:active { transform: translateY(0); }
   margin-bottom: 0.8rem;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: linear-gradient(160deg, #233244 0%, #172230 100%);
+  background: linear-gradient(160deg, #18263f 0%, #0c1424 100%);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .card-face img {
@@ -481,7 +479,7 @@ button:active { transform: translateY(0); }
   z-index: 1;
   max-width: 640px;
   margin: 2rem auto 0;
-  background: rgba(29, 41, 56, 0.5);
+  background: rgba(18, 28, 48, 0.5);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
@@ -613,7 +611,7 @@ button:active { transform: translateY(0); }
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: linear-gradient(160deg, #233244 0%, #172230 100%);
+  background: linear-gradient(160deg, #18263f 0%, #0c1424 100%);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -718,7 +716,7 @@ button:active { transform: translateY(0); }
   position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(160deg, rgba(29, 41, 56, 0.7), rgba(23, 34, 48, 0.7));
+  background: linear-gradient(160deg, rgba(18, 28, 48, 0.7), rgba(12, 20, 36, 0.7));
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
@@ -744,7 +742,7 @@ button:active { transform: translateY(0); }
   border-color: var(--card-border-hover);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 176, 107, 0.1);
   text-decoration: none;
-  background: linear-gradient(160deg, rgba(35, 50, 68, 0.8), rgba(23, 34, 48, 0.8));
+  background: linear-gradient(160deg, rgba(24, 38, 63, 0.8), rgba(12, 20, 36, 0.8));
 }
 
 .home-tile:hover::before { opacity: 1; }
@@ -773,7 +771,7 @@ button:active { transform: translateY(0); }
     repeating-linear-gradient(45deg,
       rgba(212, 176, 107, 0.08) 0 5px,
       transparent 5px 10px),
-    linear-gradient(135deg, #233244 0%, #34506e 50%, #233244 100%);
+    linear-gradient(135deg, #18263f 0%, #34506e 50%, #18263f 100%);
 }
 
 .tile-card-back-1 { transform: rotate(-8deg) translateX(-8px); z-index: 1; }
@@ -784,7 +782,7 @@ button:active { transform: translateY(0); }
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 30%, rgba(212, 176, 107, 0.15) 0%, transparent 60%),
-    linear-gradient(160deg, #233244 0%, #172230 100%);
+    linear-gradient(160deg, #18263f 0%, #0c1424 100%);
 }
 
 .home-tile:hover .tile-card-back-1 { transform: rotate(-14deg) translateX(-18px); }
@@ -917,7 +915,7 @@ button:active { transform: translateY(0); }
   border-radius: 12px;
   border: 1px solid var(--card-border);
   overflow: hidden;
-  background: linear-gradient(160deg, #233244 0%, #172230 100%);
+  background: linear-gradient(160deg, #18263f 0%, #0c1424 100%);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
               0 0 0 1px rgba(212, 176, 107, 0.15);
   position: relative;
@@ -1067,7 +1065,7 @@ button:active { transform: translateY(0); }
 }
 .combo-list li {
   padding: 0.85rem 1rem;
-  background: rgba(29, 41, 56, 0.4);
+  background: rgba(18, 28, 48, 0.4);
   border: 1px solid var(--card-border);
   border-radius: 10px;
   font-family: var(--font-serif);
@@ -1079,7 +1077,7 @@ button:active { transform: translateY(0); }
 }
 .combo-list li:hover {
   border-color: rgba(212, 176, 107, 0.4);
-  background: rgba(35, 50, 68, 0.55);
+  background: rgba(24, 38, 63, 0.55);
 }
 .combo-list strong {
   font-family: var(--font-display);
@@ -1095,7 +1093,7 @@ button:active { transform: translateY(0); }
   max-width: 720px;
   margin: 0 auto 3rem;
   padding: 1.75rem 2rem;
-  background: rgba(29, 41, 56, 0.5);
+  background: rgba(18, 28, 48, 0.5);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
@@ -1161,7 +1159,7 @@ button:active { transform: translateY(0); }
   flex-direction: column;
   gap: 0.25rem;
   padding: 1rem 1.5rem;
-  background: rgba(29, 41, 56, 0.4);
+  background: rgba(18, 28, 48, 0.4);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   text-decoration: none;
@@ -1173,7 +1171,7 @@ button:active { transform: translateY(0); }
   border-color: var(--accent);
   transform: translateY(-2px);
   text-decoration: none;
-  background: rgba(35, 50, 68, 0.6);
+  background: rgba(24, 38, 63, 0.6);
 }
 
 .card-nav-link.next { text-align: right; align-items: flex-end; }
@@ -1358,7 +1356,7 @@ button:active { transform: translateY(0); }
     justify-content: flex-start;
     gap: 0.35rem;
     padding: 1.25rem 1rem 2rem;
-    background: rgba(23, 34, 48, 0.98);
+    background: rgba(12, 20, 36, 0.98);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     overflow-y: auto;
@@ -1479,7 +1477,7 @@ p {
   z-index: 1;
   max-width: 640px;
   margin: 1.75rem auto 0;
-  background: rgba(29, 41, 56, 0.5);
+  background: rgba(18, 28, 48, 0.5);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
@@ -1520,7 +1518,7 @@ body.has-drawn .ai-reading {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
-  background: rgba(23, 34, 48, 0.55);
+  background: rgba(12, 20, 36, 0.55);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   transition: border-color 0.2s ease;
@@ -1582,7 +1580,7 @@ body.has-drawn .ai-reading {
   font-family: var(--font-sans);
   font-size: 0.98rem;
   color: var(--text-muted);
-  background: rgba(29, 41, 56, 0.5);
+  background: rgba(18, 28, 48, 0.5);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -1600,7 +1598,7 @@ body.has-drawn .ai-reading {
 .tarot-card-block {
   max-width: 680px;
   margin: 0 auto;
-  background: rgba(29, 41, 56, 0.5);
+  background: rgba(18, 28, 48, 0.5);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
@@ -1664,27 +1662,15 @@ body.has-drawn .ai-reading {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: linear-gradient(150deg, #233244, #172230);
-  border: 1px solid var(--card-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: url("/images/card-back.jpg") center / cover no-repeat, #0c1424;
+  border: none;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
 }
 .carousel-card.chosen .pcard-back {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-glow), 0 12px 28px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 2px var(--accent), 0 12px 28px rgba(0, 0, 0, 0.5);
 }
-.pback-frame {
-  width: 82%;
-  height: 86%;
-  border: 1px solid var(--card-border);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.pback-mark { color: var(--accent-deep); font-size: 1.4rem; }
+.pback-frame { display: none; }
 
 /* ---- 卡面（真实莱德·韦特图）---- */
 .tcard-face {
@@ -1692,7 +1678,7 @@ body.has-drawn .ai-reading {
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--card-border-hover);
-  background: #1d2938;
+  background: #121c30;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
 }
 .tface-img {
@@ -1788,7 +1774,7 @@ body.has-drawn .ai-reading {
 }
 .reading-card--synth {
   border-color: var(--card-border-hover);
-  background: linear-gradient(160deg, rgba(35, 50, 68, 0.5), var(--card-bg));
+  background: linear-gradient(160deg, rgba(24, 38, 63, 0.5), var(--card-bg));
 }
 .reading-card-body strong { color: var(--accent-soft); font-weight: 600; }
 
