@@ -246,7 +246,7 @@
     CardPicker.mount(picker, {
       cards: drawCards(deck, deck.length), // 整副洗好；第 i 格 => 这张牌
       count: spread.cards,
-      hintText: `从 ${deck.length} 张里任选 ${spread.cards} 张`,
+      hintText: `滑动牌堆，任选 ${spread.cards} 张`,
       onReveal: (picked) => {
         picker.style.display = "none";
         picker.innerHTML = "";

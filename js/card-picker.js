@@ -23,7 +23,8 @@
   const SNAP_K = 0.18;      // 归位弹性
   const TAP_MOVE = 8;       // 位移小于此值算点选（px）
   const TAP_MS = 400;       // 且时间短
-  const VISIBLE = 8.5;      // 偏移超过这个的牌隐藏
+  const VISIBLE = 6.5;      // 偏移超过这个的牌隐藏（收窄，减少同屏合成层）
+  const SLOT_CAP = 30;      // 最多铺这么多张背面牌（性能：更少的 3D 合成层）
 
   function clamp(n, a, l) { return Math.min(Math.max(n, a), l); }
   function lerp(a, b, t) { return a + (b - a) * t; }
@@ -71,7 +72,7 @@
 
   function mount(container, opts) {
     const cards = opts.cards || [];
-    const n = cards.length;
+    const n = Math.min(cards.length, SLOT_CAP); // 铺出来的背面牌数（性能封顶）
     const count = opts.count || 1;
     const buildBack = opts.buildBack || defaultBack;
     const reduced = prefersReducedMotion();
@@ -140,21 +141,29 @@
         const t = transformFor(off);
         const slot = slots[i];
         if (!t.visible) {
-          slot.style.opacity = "0";
-          slot.style.pointerEvents = "none";
-          slot.style.visibility = "hidden";
+          // 只在"由可见变隐藏"时写一次，隐藏期间不每帧重写，省开销
+          if (slot._vis !== false) {
+            slot.style.visibility = "hidden";
+            slot.style.opacity = "0";
+            slot.style.pointerEvents = "none";
+            slot._vis = false;
+          }
           continue;
         }
-        slot.style.visibility = "visible";
-        slot.style.pointerEvents = "auto";
+        if (slot._vis !== true) {
+          slot.style.visibility = "visible";
+          slot.style.pointerEvents = "auto";
+          slot.style.opacity = "1";
+          slot._vis = true;
+        }
         const chosen = picked.indexOf(i) >= 0;
         const lift = chosen ? -26 : 0;
         slot.style.transform =
           `translate(-50%,-50%) translateZ(${t.z}px) translateX(${t.x}px) ` +
           `translateY(${t.y + lift}px) rotateY(${t.rotateY}deg) rotate(${t.rotate}deg) scale(${t.scale})`;
         slot.style.zIndex = String(chosen ? 300 : t.zIndex);
-        slot.style.opacity = "1";
-        slot.style.filter = `brightness(${chosen ? 1.15 : t.brightness}) blur(${chosen ? 0 : t.blur}px)`;
+        // 只用 brightness（去掉 blur——移动端 GPU 上最贵的滤镜）
+        slot.style.filter = "brightness(" + (chosen ? 1.15 : t.brightness).toFixed(3) + ")";
         slot.classList.toggle("chosen", chosen);
         slot.setAttribute("aria-selected", chosen ? "true" : "false");
       }

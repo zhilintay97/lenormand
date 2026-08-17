@@ -70,7 +70,7 @@
       CardPicker.mount(stage, {
         cards: fullTarotDeck(),
         count: 3,
-        hintText: `从 ${TAROT_DECK.length} 张里任选 3 张`,
+        hintText: `滑动牌堆，任选 3 张`,
         onReveal: (cards) => {
           renderReading(stage, result, cards, POSITIONS, q);
           saveRecord({
@@ -272,7 +272,7 @@
     CardPicker.mount(stage, {
       cards: fullTarotDeck(),
       count: 1,
-      hintText: `从 ${TAROT_DECK.length} 张里抽 1 张`,
+      hintText: `滑动牌堆，抽 1 张`,
       onReveal: (cards) => {
         renderDaily(stage, result, cards[0], false);
         saveRecord({

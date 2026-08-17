@@ -1650,8 +1650,7 @@ body.has-drawn .ai-reading {
   top: 0;
   width: 96px;
   height: 150px;
-  will-change: transform, filter, opacity;
-  transition: filter 0.2s ease;
+  will-change: transform;
   -webkit-user-select: none;
   user-select: none;
 }
