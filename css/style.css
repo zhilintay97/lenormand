@@ -18,7 +18,7 @@
 
   --card-bg: #121c30;
   --card-bg-hover: #18263f;
-  --card-border: #2a3a52;                          /* slate hairline — modern, structural */
+  --card-border: #3a4d68;                          /* slate hairline — lifted for visibility on the deep base */
   --card-border-hover: rgba(214, 174, 104, 0.42);  /* cards warm to gold on hover */
 
   --font-display: 'Cinzel', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', 'Georgia', serif;
@@ -1336,7 +1336,13 @@ button:active { transform: translateY(0); }
     gap: 0.75rem;
     flex-wrap: nowrap;
   }
-  .site-header {
+  /* 手机上关掉这些滚动面板的毛玻璃：背景是 fixed 的，滚动时每帧都要重算模糊，很卡 */
+  .site-header,
+  .home-tile,
+  .card-details,
+  .interpretation,
+  .ai-reading,
+  .tarot-card-block {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
@@ -1525,8 +1531,9 @@ body.has-drawn .ai-reading {
 }
 .ai-form textarea::placeholder { color: var(--text-faint); }
 .ai-form textarea:focus {
-  outline: none;
-  border-color: var(--card-border-hover);
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
 }
 .ai-form .ai-submit {
   align-self: center;
@@ -1635,7 +1642,7 @@ body.has-drawn .ai-reading {
   outline: none;
 }
 .card-carousel-viewport[data-dragging] { cursor: grabbing; }
-.card-carousel-viewport:focus-visible { box-shadow: inset 0 0 0 1px var(--accent-glow); }
+.card-carousel-viewport:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .card-carousel {
   position: absolute;
   left: 50%;

@@ -54,7 +54,7 @@ AI_PANEL_HTML = """    <div class="container">
         <h2>让 AI 深入解读</h2>
         <p class="ai-intro">写下你此刻真正想问的问题，让 AI 结合上面这次牌阵，给出一段更完整的解读。</p>
         <form class="ai-form" id="aiForm">
-          <textarea id="aiQuestion" maxlength="500"
+          <textarea id="aiQuestion" maxlength="500" aria-label="写下你想问的问题"
             placeholder="例如：这段关系接下来会怎么发展？我该不该换工作？"></textarea>
           <button type="submit" class="btn ai-submit" id="aiAskBtn">让 AI 解读这次牌阵</button>
         </form>
@@ -67,7 +67,7 @@ AI_PANEL_HTML = """    <div class="container">
 # browser's base URL is unknown at build time and depth-relative links would
 # break — "../../css/style.css" resolves against the bad path. Every link and
 # asset here is therefore absolute.
-NOT_FOUND_TITLE = "页面不存在 | 雷诺曼"
+NOT_FOUND_TITLE = "页面不存在 | 卜月"
 NOT_FOUND_DESC = "你要找的页面不存在。回到首页，或从这里进入 36 张牌的牌义、七个牌阵与十篇雷诺曼指南。"
 NOT_FOUND_BODY = """    <div class="container">
       <section class="page-head fade-up">
@@ -144,7 +144,7 @@ def header(page, p):
     return f"""  <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="{p}">
-        <span class="brand-mark">✴</span>
+        <span class="brand-mark" aria-hidden="true">✴</span>
         <span>{SITE_NAME}</span>
       </a>
       <button class="nav-toggle" aria-label="展开或收起导航菜单" aria-expanded="false">
@@ -163,7 +163,7 @@ def footer(p):
       <div class="footer-grid">
         <div class="footer-col footer-brand">
           <a class="footer-logo" href="{p}">
-            <span class="brand-mark">✴</span>
+            <span class="brand-mark" aria-hidden="true">✴</span>
             <span>{SITE_NAME}</span>
           </a>
           <p>安静的线上卡牌占卜 —— 雷诺曼与塔罗，完整牌义，无需注册。</p>

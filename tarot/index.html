@@ -13,6 +13,11 @@
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:title" content="塔罗占卜 · 每日一牌与问题占卜 | 卜月" />
   <meta property="og:description" content="抽一张今日牌，或就一个问题抽三张牌。滑动牌堆，点选你想要的牌。" />
+  <meta property="og:image" content="https://lenormand-rho.vercel.app/images/lenormand_featured.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="塔罗占卜 · 每日一牌与问题占卜 | 卜月" />
+  <meta name="twitter:description" content="抽一张今日牌，或就一个问题抽三张牌。滑动牌堆，点选你想要的牌。" />
+  <meta name="twitter:image" content="https://lenormand-rho.vercel.app/images/lenormand_featured.jpg" />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body class="tarot-body">
@@ -27,7 +32,7 @@
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="../">
-        <span class="brand-mark">✴</span>
+        <span class="brand-mark" aria-hidden="true">✴</span>
         <span>卜月</span>
       </a>
       <button class="nav-toggle" aria-label="展开或收起导航菜单" aria-expanded="false">
@@ -57,12 +62,12 @@
       </section>
 
       <div class="tarot-tabs" role="tablist">
-        <button class="tarot-tab active" data-panel="tarotDaily">每日一牌</button>
-        <button class="tarot-tab" data-panel="tarotQuestion">问题占卜</button>
+        <button class="tarot-tab active" id="tab-daily" data-panel="tarotDaily" role="tab" aria-selected="true" aria-controls="tarotDaily">每日一牌</button>
+        <button class="tarot-tab" id="tab-question" data-panel="tarotQuestion" role="tab" aria-selected="false" aria-controls="tarotQuestion">问题占卜</button>
       </div>
 
       <!-- 每日一牌 -->
-      <section class="tarot-panel active" id="tarotDaily">
+      <section class="tarot-panel active" id="tarotDaily" role="tabpanel" aria-labelledby="tab-daily">
         <div class="tarot-card-block">
           <div class="td-date" id="tdDate"></div>
           <div class="picker-stage" id="tdStage"></div>
@@ -71,10 +76,10 @@
       </section>
 
       <!-- 问题占卜 -->
-      <section class="tarot-panel" id="tarotQuestion">
+      <section class="tarot-panel" id="tarotQuestion" role="tabpanel" aria-labelledby="tab-question">
         <div class="tarot-card-block">
           <div class="ai-form" style="margin-bottom:1.25rem">
-            <textarea id="tqInput" maxlength="200"
+            <textarea id="tqInput" maxlength="200" aria-label="写下你想问的问题"
               placeholder="写下你想问的问题，例如：这段关系接下来会怎么发展？"></textarea>
             <button class="btn" id="tqStart" style="align-self:center">开始抽牌</button>
           </div>
