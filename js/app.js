@@ -105,6 +105,10 @@
   function renderSpread(spread, drawnCards) {
     const grid = document.getElementById("spreadGrid");
     if (!grid) return;
+    // Tag the grid with its layout so the CSS can lay a line out as one row
+    // (readable as a whole on mobile) and the nine-card spread as a 3×3 box.
+    grid.classList.remove("layout-line", "layout-box", "layout-tableau");
+    grid.classList.add("layout-" + (spread.layout || "line"));
     grid.innerHTML = "";
     spread.positions.forEach((position, i) => {
       const card = drawnCards ? drawnCards[i] : null;
@@ -216,9 +220,12 @@
       // as a plain data object — no DOM coupling.
       window.__lenoReading = {
         spreadName: spread.name,
+        spreadKey: spreadKey,
+        layout: spread.layout || "line",
         cards: drawn.map((card, i) => ({
           position: spread.positions[i].label,
           name: card.name,
+          slug: card.slug,
           keywords: card.keywords,
         })),
       };

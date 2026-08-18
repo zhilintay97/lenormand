@@ -85,24 +85,22 @@ def tab_active(path):
         return "Lenormand"
     return ""
 
-SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "card-picker.js", "app.js", "reading-ai.js"]
+SPREAD_SCRIPTS = ["deck.js", "spreads.js", "combos.js", "interpretations.js", "card-picker.js", "app.js", "reading-detail.js"]
 
-# Optional AI panel, injected only on spread pages (the ones with data-spread).
+# The 解读 panel, injected only on spread pages (the ones with data-spread).
 # It sits after the drawing UI, inside its own .container for consistent gutters,
-# and stays hidden until the first draw (CSS: body.has-drawn .ai-reading).
-# The server-side interpreter lives at api/interpret.js; the browser never sees
-# the API key. See js/reading-ai.js.
-AI_PANEL_HTML = """    <div class="container">
-      <section class="ai-reading" aria-label="AI 深入解读">
-        <h2>让 AI 深入解读</h2>
-        <p class="ai-intro">写下你此刻真正想问的问题，让 AI 结合上面这次牌阵，给出一段更完整的解读。</p>
-        <form class="ai-form" id="aiForm">
-          <textarea id="aiQuestion" maxlength="500" aria-label="写下你想问的问题"
-            placeholder="例如：这段关系接下来会怎么发展？我该不该换工作？"></textarea>
-          <button type="submit" class="btn ai-submit" id="aiAskBtn">让 AI 解读这次牌阵</button>
-        </form>
-        <div class="ai-answer" id="aiAnswer" aria-live="polite"></div>
-        <p class="ai-disclaimer">AI 解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
+# and stays hidden until the first draw (CSS: body.has-drawn .reading-detail).
+# It reads entirely from local data (js/combos.js) — no server, no AI — and shows
+# each card's meaning by position plus the combination meanings between neighbours,
+# so a visitor never has to open 35 separate card pages. See js/reading-detail.js.
+# (An AI deep-reading may later be added on this same panel.)
+READING_PANEL_HTML = """    <div class="container">
+      <section class="reading-detail" aria-label="解读">
+        <h2>解读</h2>
+        <p class="reading-detail-intro">把这次牌阵展开看：每张牌落在它的位置上说了什么，以及相邻的牌连起来又是什么意思 —— 不用一张张点进去看。</p>
+        <button type="button" class="btn" id="readBtn">解读这次牌阵</button>
+        <div class="reading-detail-body" id="readBody" aria-live="polite"></div>
+        <p class="ai-disclaimer">解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
       </section>
     </div>"""
 
@@ -111,7 +109,7 @@ AI_PANEL_HTML = """    <div class="container">
 # break — "../../css/style.css" resolves against the bad path. Every link and
 # asset here is therefore absolute.
 NOT_FOUND_TITLE = "页面不存在 | 卜月"
-NOT_FOUND_DESC = "你要找的页面不存在。回到首页，或从这里进入 36 张牌的牌义、七个牌阵与十篇雷诺曼指南。"
+NOT_FOUND_DESC = "你要找的页面不存在。回到首页，或从这里进入 36 张牌的牌义、四个牌阵与十篇雷诺曼指南。"
 NOT_FOUND_BODY = """    <div class="container">
       <section class="page-head fade-up">
         <div class="hero-eyebrow">404</div>
@@ -131,7 +129,7 @@ NOT_FOUND_BODY = """    <div class="container">
         <h2>你可能想找的</h2>
         <ul>
           <li><a href="{p}cards/">36 张牌的完整牌义</a>——从骑士到十字架，每张牌都附它与其余 35 张的组合读法。</li>
-          <li><a href="{p}spreads/">七个牌阵</a>——从三张牌的横列，到摊满 36 张的大牌阵，都可以直接抽。</li>
+          <li><a href="{p}spreads/">四个牌阵</a>——从三张牌的横列，到摊满 36 张的大牌阵，都可以直接抽。</li>
           <li><a href="{p}guides/">十篇指南</a>——怎么读、怎么问、怎么洗牌，以及大牌阵的宫位是什么。</li>
           <li><a href="{p}decks/">十五副牌组测评</a>——当代艺术风、德国传统经典，以及奠基性的历史版本。</li>
         </ul>
@@ -238,7 +236,7 @@ def render(page, body, prefix=None):
     scripts = SPREAD_SCRIPTS if is_spread else ["app.js"]
     script_tags = "\n".join(f'  <script src="{p}js/{s}"></script>' for s in scripts)
     # Spread pages get the optional AI panel appended inside <main>.
-    main_body = body.rstrip() + ("\n\n" + AI_PANEL_HTML if is_spread else "")
+    main_body = body.rstrip() + ("\n\n" + READING_PANEL_HTML if is_spread else "")
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">

@@ -1,4 +1,10 @@
 // ---------- 雷诺曼牌阵 ----------
+// 雷诺曼只有两种正宗阵形：一行（线阵），或方阵（Tableau）。
+// 牌不是逐个「牌位」单独解，而是像一句话一样连起来读，靠相邻两张的
+// 组合产生含义。下面四个阵都遵循这一点：
+//   · 三张 / 五张 —— 线阵，读成一句话，中间那张是主题。
+//   · 九张 —— 3×3 方阵，中央是核心，横看是时间，纵看是脉络。
+//   · 大牌阵 —— 36 张全上，按宫位读。
 
 // 大牌阵（Grand Tableau）的宫位名称，按 1-36 的传统顺序排列。
 const LENORMAND_HOUSE_NAMES = [
@@ -14,9 +20,10 @@ const SPREADS = {
     slug: "3-card-spread",
     name: "三张牌阵",
     cards: 3,
+    layout: "line",
     positions: [
       { label: "过去", meaning: "是什么塑造了这个问题" },
-      { label: "现在", meaning: "你此刻所处的位置" },
+      { label: "现在", meaning: "事情的核心，此刻的处境" },
       { label: "未来", meaning: "事情正走向何方" }
     ]
   },
@@ -24,75 +31,42 @@ const SPREADS = {
     slug: "5-card-spread",
     name: "五张牌阵",
     cards: 5,
+    layout: "line",
     positions: [
       { label: "过去",   meaning: "是什么塑造了这个问题" },
       { label: "近期",   meaning: "刚刚离去的" },
-      { label: "现在",   meaning: "事情的核心" },
+      { label: "现在",   meaning: "事情的核心，整列的焦点" },
       { label: "不久后", meaning: "正在靠近的" },
       { label: "结果",   meaning: "事情正走向何方" }
     ]
   },
-  seven_card_spread: {
-    slug: "7-card-spread",
-    name: "七张牌阵",
-    cards: 7,
-    positions: [
-      { label: "过去",   meaning: "是什么塑造了这个问题" },
-      { label: "近期",   meaning: "刚刚离去的" },
-      { label: "外在影响", meaning: "周遭的客观条件" },
-      { label: "现在",   meaning: "事情的核心" },
-      { label: "牌的建议", meaning: "牌给出的忠告" },
-      { label: "不久后", meaning: "正在靠近的" },
-      { label: "结果",   meaning: "事情正走向何方" }
-    ]
-  },
+  // 九张 = 3×3 方阵（Box）。中央那张（第 5）是核心；
+  // 上行是过去/来路，中行是当下，下行是未来/去向；也可按列读。
   nine_card_spread: {
     slug: "9-card-spread",
     name: "九张牌阵",
     cards: 9,
+    layout: "box",
     positions: [
-      { label: "过去的影响", meaning: "是什么塑造了此事" },
-      { label: "近期",       meaning: "刚刚离去的" },
-      { label: "正在靠近",   meaning: "已在路上的" },
-      { label: "你自己",     meaning: "你在此事中的位置" },
-      { label: "事情核心",   meaning: "全局的焦点牌" },
-      { label: "他人",       meaning: "局外的相关者" },
-      { label: "期待与恐惧", meaning: "你渴望的与你害怕的" },
-      { label: "前行之路",   meaning: "最明智的下一步" },
-      { label: "结果",       meaning: "事情正走向何方" }
+      { label: "左上", meaning: "上行 · 过去与来路" },
+      { label: "正上", meaning: "上行 · 过去与来路" },
+      { label: "右上", meaning: "上行 · 过去与来路" },
+      { label: "左中", meaning: "中行 · 当下的现实" },
+      { label: "核心", meaning: "全局焦点 · 事情的正中央" },
+      { label: "右中", meaning: "中行 · 当下的现实" },
+      { label: "左下", meaning: "下行 · 事情的去向" },
+      { label: "正下", meaning: "下行 · 事情的去向" },
+      { label: "右下", meaning: "下行 · 事情的去向" }
     ]
   },
   grand_tableau: {
     slug: "grand-tableau",
     name: "大牌阵",
     cards: 36,
+    layout: "tableau",
     positions: LENORMAND_HOUSE_NAMES.map((house, i) => ({
       label: `${i + 1}`,
       meaning: `${house}之宫`
     }))
-  },
-  relationship_spread: {
-    slug: "relationship-spread",
-    name: "关系牌阵",
-    cards: 5,
-    positions: [
-      { label: "你",     meaning: "你在这段关系中的状态" },
-      { label: "对方",   meaning: "对方的状态" },
-      { label: "联结",   meaning: "你们之间的纽带" },
-      { label: "阻碍",   meaning: "横在中间的难题" },
-      { label: "结果",   meaning: "事情正走向何方" }
-    ]
-  },
-  love_spread: {
-    slug: "love-spread",
-    name: "爱情牌阵",
-    cards: 5,
-    positions: [
-      { label: "感情现状",   meaning: "你此刻的感情处境" },
-      { label: "你的给予",   meaning: "你在爱里的天赋" },
-      { label: "你的阻碍",   meaning: "妨碍亲密的东西" },
-      { label: "爱的诉求",   meaning: "爱对你的要求" },
-      { label: "正在靠近",   meaning: "已在路上的" }
-    ]
   }
 };

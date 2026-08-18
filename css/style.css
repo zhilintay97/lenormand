@@ -382,6 +382,15 @@ button:active { transform: translateY(0); }
   margin-bottom: 3rem;
 }
 
+/* Nine-card spread: a real 3×3 box on every screen, not a wrapped row. */
+.spread-grid.layout-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 180px));
+  justify-content: center;
+  gap: 1.25rem;
+}
+.spread-grid.layout-box .card { width: 100%; }
+
 .card {
   width: 180px;
   background: transparent;
@@ -523,14 +532,54 @@ button:active { transform: translateY(0); }
 }
 .interpretation .summary + .summary { margin-top: 1rem; }
 
-/* Mobile: stack cards vertically — a 3-card line reads sequentially. */
+/* Mobile: keep the spread readable AS A LINE. Lenormand is meant to be read
+   left-to-right as one sentence, so on a phone the row stays a row (fit to
+   width, swipe if it can't all fit) instead of stacking into a column. The
+   per-card meaning text is dropped here to keep the whole line scannable —
+   the full meanings + combinations live in the 解读 panel below. */
 @media (max-width: 720px) {
-  .spread-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+  /* line spreads (3 / 5) — one horizontal row */
+  .spread-grid.layout-line {
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
   }
-  .card { width: 100%; max-width: 240px; }
+  .spread-grid.layout-line .card {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 120px;
+  }
+
+  /* nine-card box — a 3×3 grid that fits the screen */
+  .spread-grid.layout-box {
+    gap: 0.5rem;
+    justify-items: center;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .spread-grid.layout-box .card { max-width: 130px; }
+
+  /* grand tableau — compact grid, not a tall 36-card stack */
+  .spread-grid.layout-tableau {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+  .spread-grid.layout-tableau .card { width: 100%; }
+
+  /* compact card chrome for all mobile spreads */
+  .spread-grid .card-interpretation,
+  .spread-grid .card-meaning { display: none; }
+  .spread-grid .card-face { margin-bottom: 0.4rem; }
+  .spread-grid .card-name { font-size: 0.82rem; margin-bottom: 0.2rem; min-height: 0; }
+  .spread-grid .card-position { font-size: 0.62rem; letter-spacing: 0.08em; margin-bottom: 0; }
+
   .interpretation { padding: 1.5rem 1.25rem; font-size: 1.02rem; }
 }
 
@@ -1342,6 +1391,7 @@ button:active { transform: translateY(0); }
   .card-details,
   .interpretation,
   .ai-reading,
+  .reading-detail,
   .tarot-card-block {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
@@ -1574,6 +1624,131 @@ body.has-drawn .ai-reading {
 }
 @media (max-width: 560px) {
   .ai-reading { padding: 1.4rem 1.15rem; }
+}
+
+/* ---------- 解读面板（本地牌义 + 组合，仅牌阵页）---------- */
+/* 首次抽牌前隐藏；抽牌后由 body.has-drawn 显示。内容来自 js/combos.js。 */
+.reading-detail {
+  display: none;
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 1.75rem auto 0;
+  background: rgba(18, 28, 48, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+}
+body.has-drawn .reading-detail {
+  display: block;
+  animation: fadeUp 0.6s ease-out;
+}
+.reading-detail h2 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0.4rem;
+}
+.reading-detail-intro {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  text-align: center;
+  margin: 0 0 1.25rem;
+}
+.reading-detail > .btn { display: block; margin: 0 auto; }
+
+.reading-detail-body { display: none; margin-top: 1.5rem; }
+.reading-detail-body.visible { display: block; animation: fadeUp 0.5s ease-out; }
+
+.rd-block + .rd-block {
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--card-border);
+}
+.rd-block h3 {
+  font-family: var(--font-display);
+  color: var(--accent-soft);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.9rem;
+}
+
+.rd-cards { list-style: none; margin: 0; padding: 0; }
+.rd-cards li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed rgba(212, 176, 107, 0.14);
+  line-height: 1.6;
+}
+.rd-cards li:last-child { border-bottom: none; }
+.rd-pos {
+  flex: 0 0 auto;
+  min-width: 3.2em;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
+.rd-name {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--accent);
+}
+.rd-name:hover { color: var(--accent-soft); }
+.rd-kw {
+  flex: 1 1 12em;
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.rd-combo-note {
+  font-family: var(--font-sans);
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  margin: 0 0 0.9rem;
+}
+.rd-combos { list-style: none; margin: 0; padding: 0; }
+.rd-combos li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed rgba(212, 176, 107, 0.14);
+  line-height: 1.65;
+}
+.rd-combos li:last-child { border-bottom: none; }
+.rd-combo-pair { display: block; margin-bottom: 0.15rem; }
+.rd-combo-pair strong { color: var(--accent-soft); font-weight: 600; }
+.rd-combo-tag {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin-left: 0.4rem;
+}
+.rd-combo-text {
+  display: block;
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+}
+.reading-detail-hint {
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 1.2rem 0 0;
+}
+@media (max-width: 560px) {
+  .reading-detail { padding: 1.4rem 1.15rem; }
 }
 
 /* ================= 塔罗 App（滑动挑牌）================= */

@@ -87,15 +87,15 @@
       <section class="card-section fade-up">
         <h2>3×3 牌阵的位置</h2>
         <ol class="position-list">
-          <li><span class="position-num">I</span><div><strong>过去的影响</strong>——是什么塑造了这个问题。</div></li>
-          <li><span class="position-num">II</span><div><strong>近期</strong>——刚刚离去的。</div></li>
-          <li><span class="position-num">III</span><div><strong>正在靠近</strong>——已在路上的。</div></li>
-          <li><span class="position-num">IV</span><div><strong>你自己</strong>——你在这件事里的位置。</div></li>
-          <li><span class="position-num">V</span><div><strong>事情核心</strong>——焦点牌，问题的正中央。</div></li>
-          <li><span class="position-num">VI</span><div><strong>他人</strong>——你身边的局外相关者。</div></li>
-          <li><span class="position-num">VII</span><div><strong>期待与恐惧</strong>——你渴望的，和你害怕的。</div></li>
-          <li><span class="position-num">VIII</span><div><strong>前行之路</strong>——最明智的下一步。</div></li>
-          <li><span class="position-num">IX</span><div><strong>结果</strong>——事情正走向何方。</div></li>
+          <li><span class="position-num">I</span><div><strong>左上</strong>——上行（过去与来路）的起点。</div></li>
+          <li><span class="position-num">II</span><div><strong>正上</strong>——上行的中段，过去的主线。</div></li>
+          <li><span class="position-num">III</span><div><strong>右上</strong>——上行的收束，来路的尾声。</div></li>
+          <li><span class="position-num">IV</span><div><strong>左中</strong>——中行（当下）的左侧。</div></li>
+          <li><span class="position-num">V</span><div><strong>核心</strong>——正中央，事情的焦点，分量最重。</div></li>
+          <li><span class="position-num">VI</span><div><strong>右中</strong>——中行（当下）的右侧。</div></li>
+          <li><span class="position-num">VII</span><div><strong>左下</strong>——下行（事情去向）的起点。</div></li>
+          <li><span class="position-num">VIII</span><div><strong>正下</strong>——下行的中段，事情的走势。</div></li>
+          <li><span class="position-num">IX</span><div><strong>右下</strong>——下行的收束，最终的落点。</div></li>
         </ol>
       </section>
 
@@ -116,16 +116,12 @@
     </div>
 
     <div class="container">
-      <section class="ai-reading" aria-label="AI 深入解读">
-        <h2>让 AI 深入解读</h2>
-        <p class="ai-intro">写下你此刻真正想问的问题，让 AI 结合上面这次牌阵，给出一段更完整的解读。</p>
-        <form class="ai-form" id="aiForm">
-          <textarea id="aiQuestion" maxlength="500" aria-label="写下你想问的问题"
-            placeholder="例如：这段关系接下来会怎么发展？我该不该换工作？"></textarea>
-          <button type="submit" class="btn ai-submit" id="aiAskBtn">让 AI 解读这次牌阵</button>
-        </form>
-        <div class="ai-answer" id="aiAnswer" aria-live="polite"></div>
-        <p class="ai-disclaimer">AI 解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
+      <section class="reading-detail" aria-label="解读">
+        <h2>解读</h2>
+        <p class="reading-detail-intro">把这次牌阵展开看：每张牌落在它的位置上说了什么，以及相邻的牌连起来又是什么意思 —— 不用一张张点进去看。</p>
+        <button type="button" class="btn" id="readBtn">解读这次牌阵</button>
+        <div class="reading-detail-body" id="readBody" aria-live="polite"></div>
+        <p class="ai-disclaimer">解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
       </section>
     </div>
   </main>
@@ -168,9 +164,10 @@
 
   <script src="../../js/deck.js"></script>
   <script src="../../js/spreads.js"></script>
+  <script src="../../js/combos.js"></script>
   <script src="../../js/interpretations.js"></script>
   <script src="../../js/card-picker.js"></script>
   <script src="../../js/app.js"></script>
-  <script src="../../js/reading-ai.js"></script>
+  <script src="../../js/reading-detail.js"></script>
 </body>
 </html>

@@ -809,20 +809,6 @@
     ]
   },
   {
-    "path": "spreads/7-card-spread/",
-    "depth": 2,
-    "title": "Free 7-Card Lenormand Spread Online | Lenormand",
-    "description": "Free 7-card Lenormand spread — past, recent past, influences, present, advice, near future, outcome. Draw seven cards from the 36-card deck. No sign-up.",
-    "nav_active": "Spreads",
-    "body_attrs": "data-spread=\"seven_card_spread\"",
-    "scripts": [
-      "deck.js",
-      "spreads.js",
-      "interpretations.js",
-      "app.js"
-    ]
-  },
-  {
     "path": "spreads/9-card-spread/",
     "depth": 2,
     "title": "Free 3x3 Lenormand Spread Online — 9 Cards | Lenormand",
@@ -843,34 +829,6 @@
     "description": "Free Grand Tableau Lenormand spread — the full 36-card reading. The most iconic and comprehensive Lenormand layout, with every card laid out at once. No sign-up.",
     "nav_active": "Spreads",
     "body_attrs": "data-spread=\"grand_tableau\"",
-    "scripts": [
-      "deck.js",
-      "spreads.js",
-      "interpretations.js",
-      "app.js"
-    ]
-  },
-  {
-    "path": "spreads/love-spread/",
-    "depth": 2,
-    "title": "Free Love Lenormand Spread Online | Lenormand",
-    "description": "Free Lenormand love spread — five cards on your love life as a whole: where it stands, what you bring, what blocks you, what love wants, and what's approaching. No sign-up.",
-    "nav_active": "Spreads",
-    "body_attrs": "data-spread=\"love_spread\"",
-    "scripts": [
-      "deck.js",
-      "spreads.js",
-      "interpretations.js",
-      "app.js"
-    ]
-  },
-  {
-    "path": "spreads/relationship-spread/",
-    "depth": 2,
-    "title": "Free Relationship Lenormand Spread Online | Lenormand",
-    "description": "Free Lenormand relationship spread — five cards reading the bond between two people: you, them, the connection, the challenge, and the outcome. No sign-up.",
-    "nav_active": "Spreads",
-    "body_attrs": "data-spread=\"relationship_spread\"",
     "scripts": [
       "deck.js",
       "spreads.js",

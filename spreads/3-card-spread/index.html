@@ -115,16 +115,12 @@
     </div>
 
     <div class="container">
-      <section class="ai-reading" aria-label="AI 深入解读">
-        <h2>让 AI 深入解读</h2>
-        <p class="ai-intro">写下你此刻真正想问的问题，让 AI 结合上面这次牌阵，给出一段更完整的解读。</p>
-        <form class="ai-form" id="aiForm">
-          <textarea id="aiQuestion" maxlength="500" aria-label="写下你想问的问题"
-            placeholder="例如：这段关系接下来会怎么发展？我该不该换工作？"></textarea>
-          <button type="submit" class="btn ai-submit" id="aiAskBtn">让 AI 解读这次牌阵</button>
-        </form>
-        <div class="ai-answer" id="aiAnswer" aria-live="polite"></div>
-        <p class="ai-disclaimer">AI 解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
+      <section class="reading-detail" aria-label="解读">
+        <h2>解读</h2>
+        <p class="reading-detail-intro">把这次牌阵展开看：每张牌落在它的位置上说了什么，以及相邻的牌连起来又是什么意思 —— 不用一张张点进去看。</p>
+        <button type="button" class="btn" id="readBtn">解读这次牌阵</button>
+        <div class="reading-detail-body" id="readBody" aria-live="polite"></div>
+        <p class="ai-disclaimer">解读仅供自省与娱乐，不构成医疗、法律、财务或心理方面的建议。</p>
       </section>
     </div>
   </main>
@@ -167,9 +163,10 @@
 
   <script src="../../js/deck.js"></script>
   <script src="../../js/spreads.js"></script>
+  <script src="../../js/combos.js"></script>
   <script src="../../js/interpretations.js"></script>
   <script src="../../js/card-picker.js"></script>
   <script src="../../js/app.js"></script>
-  <script src="../../js/reading-ai.js"></script>
+  <script src="../../js/reading-detail.js"></script>
 </body>
 </html>
