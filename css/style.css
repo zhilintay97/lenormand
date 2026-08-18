@@ -1347,7 +1347,10 @@ button:active { transform: translateY(0); }
     -webkit-backdrop-filter: none;
   }
 
-  .nav-toggle { display: inline-flex; }
+  /* 手机上改用底部标签栏，隐藏顶部导航与汉堡菜单 */
+  .main-nav, .nav-toggle { display: none !important; }
+  .tab-bar { display: flex; }
+  body { padding-bottom: 64px; }
 
   .main-nav {
     display: none;
@@ -1827,6 +1830,40 @@ body.has-drawn .ai-reading {
 .landing-records { text-align: center; margin-top: 1.6rem; }
 .landing-records a { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--text-muted); }
 .landing-records a:hover { color: var(--accent); }
+
+/* ---------- 底部标签栏（手机）---------- */
+.tab-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 200;
+  display: none;                 /* 只在手机显示，见媒体查询 */
+  justify-content: space-around;
+  background: rgba(9, 14, 24, 0.97);
+  border-top: 1px solid rgba(214, 174, 104, 0.22);
+  padding: 5px 0 6px;
+}
+.tab-bar a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 5px 0;
+  color: var(--text-faint);
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.tab-bar a.active { color: var(--accent); }
+.tab-ico { width: 22px; height: 22px; display: block; }
+@supports (padding: max(0px)) {
+  .tab-bar { padding-bottom: max(6px, env(safe-area-inset-bottom)); }
+}
+/* 放在基础规则之后，确保手机上"显示"胜过上面的 display:none */
+@media (max-width: 720px) { .tab-bar { display: flex; } }
 
 /* 雷诺曼牌阵页的挑牌区 */
 .leno-picker { margin: 0.5rem 0 1.75rem; }

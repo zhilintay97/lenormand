@@ -36,11 +36,54 @@ OG_IMAGE = SITE_URL + "/images/lenormand_featured.jpg"
 NAV = [
     ("lenormand/", "雷诺曼", "Lenormand"),
     ("tarot/", "塔罗", "Tarot"),
-    ("cards/", "牌义", "Cards"),
-    ("decks/", "牌组", "Decks"),
     ("guides/", "指南", "Guides"),
     ("records/", "记录", "Records"),
 ]
+
+# ---- 底部标签栏（手机上固定在底部；桌面用顶部导航）----
+ICON_HOME = ('<svg class="tab-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+             'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'
+             '<path d="M3 10.5 12 4l9 6.5"/><path d="M5.5 9.5V20h13V9.5"/></svg>')
+ICON_LENO = ('<svg class="tab-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+             'stroke-width="1.6" stroke-linejoin="round">'
+             '<rect x="4" y="5.5" width="8.5" height="13" rx="1.5"/>'
+             '<rect x="11" y="5.5" width="8.5" height="13" rx="1.5"/></svg>')
+ICON_TAROT = ('<svg class="tab-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+              'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'
+              '<path d="M17.2 15.4A6.4 6.4 0 1 1 11 5a5 5 0 0 0 6.2 10.4Z"/>'
+              '<path d="m18.5 3.6.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/></svg>')
+ICON_REC = ('<svg class="tab-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+            'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'
+            '<rect x="4" y="5" width="16" height="15" rx="2"/>'
+            '<path d="M4 9.5h16M8.5 3v4M15.5 3v4"/></svg>')
+
+TAB_ITEMS = [
+    ("", "首页", "home", ICON_HOME),
+    ("lenormand/", "雷诺曼", "Lenormand", ICON_LENO),
+    ("tarot/", "塔罗", "Tarot", ICON_TAROT),
+    ("records/", "记录", "Records", ICON_REC),
+]
+
+
+def tab_bar(p, active):
+    links = []
+    for href, label, key, icon in TAB_ITEMS:
+        cls = ' class="active"' if active == key else ""
+        cur = ' aria-current="page"' if active == key else ""
+        links.append(f'      <a href="{p}{href}"{cls}{cur}>{icon}<span>{label}</span></a>')
+    return '  <nav class="tab-bar" aria-label="主导航">\n' + "\n".join(links) + "\n  </nav>"
+
+
+def tab_active(path):
+    if path.startswith("tarot"):
+        return "Tarot"
+    if path.startswith("records"):
+        return "Records"
+    if path == "":
+        return "home"
+    if path.startswith(("lenormand", "spreads", "guides", "cards")):
+        return "Lenormand"
+    return ""
 
 SPREAD_SCRIPTS = ["deck.js", "spreads.js", "interpretations.js", "card-picker.js", "app.js", "reading-ai.js"]
 
@@ -174,9 +217,8 @@ def footer(p):
           <ul>
             <li><a href="{p}lenormand/">雷诺曼</a></li>
             <li><a href="{p}tarot/">塔罗</a></li>
-            <li><a href="{p}cards/">牌义</a></li>
-            <li><a href="{p}decks/">牌组</a></li>
             <li><a href="{p}guides/">指南</a></li>
+            <li><a href="{p}records/">记录</a></li>
           </ul>
         </div>
       </div>
@@ -219,6 +261,8 @@ def render(page, body, prefix=None):
   </main>
 
 {footer(p)}
+
+{tab_bar(p, tab_active(page["path"]))}
 
 {script_tags}
 </body>
