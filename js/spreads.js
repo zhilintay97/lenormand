@@ -40,23 +40,24 @@ const SPREADS = {
       { label: "结果",   meaning: "事情正走向何方" }
     ]
   },
-  // 九张 = 3×3 方阵（Box）。中央那张（第 5）是核心；
-  // 上行是过去/来路，中行是当下，下行是未来/去向；也可按列读。
+  // 九张 = 3×3 方阵（Box）。正中（第 5）是核心；
+  // 三行是层次：上=心上/念头、中=当下/现实、下=根基/潜流；
+  // 三列是时间：左=过去、中=现在、右=未来。每格 = 某层次 × 某时间。
   nine_card_spread: {
     slug: "9-card-spread",
     name: "九张牌阵",
     cards: 9,
     layout: "box",
     positions: [
-      { label: "左上", meaning: "上行 · 过去与来路" },
-      { label: "正上", meaning: "上行 · 过去与来路" },
-      { label: "右上", meaning: "上行 · 过去与来路" },
-      { label: "左中", meaning: "中行 · 当下的现实" },
-      { label: "核心", meaning: "全局焦点 · 事情的正中央" },
-      { label: "右中", meaning: "中行 · 当下的现实" },
-      { label: "左下", meaning: "下行 · 事情的去向" },
-      { label: "正下", meaning: "下行 · 事情的去向" },
-      { label: "右下", meaning: "下行 · 事情的去向" }
+      { label: "左上", meaning: "心上 · 过去" },
+      { label: "正上", meaning: "心上 · 现在" },
+      { label: "右上", meaning: "心上 · 未来" },
+      { label: "左中", meaning: "当下 · 过去" },
+      { label: "核心", meaning: "全局核心" },
+      { label: "右中", meaning: "当下 · 未来" },
+      { label: "左下", meaning: "根基 · 过去" },
+      { label: "正下", meaning: "根基 · 现在" },
+      { label: "右下", meaning: "根基 · 未来" }
     ]
   },
   grand_tableau: {

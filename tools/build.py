@@ -85,7 +85,7 @@ def tab_active(path):
         return "Lenormand"
     return ""
 
-SPREAD_SCRIPTS = ["deck.js", "spreads.js", "combos.js", "interpretations.js", "card-picker.js", "app.js", "reading-detail.js"]
+SPREAD_SCRIPTS = ["deck.js", "spreads.js", "combos.js", "card-meanings.js", "interpretations.js", "card-picker.js", "app.js", "reading-detail.js"]
 
 # The 解读 panel, injected only on spread pages (the ones with data-spread).
 # It sits after the drawing UI, inside its own .container for consistent gutters,

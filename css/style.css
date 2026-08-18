@@ -1747,6 +1747,105 @@ body.has-drawn .reading-detail {
   line-height: 1.7;
   margin: 1.2rem 0 0;
 }
+
+/* 「这个牌阵怎么读」—— 结构分区 */
+.rd-structure-lead {
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.rd-zones { list-style: none; margin: 0; padding: 0; }
+.rd-zone {
+  padding: 0.65rem 0;
+  border-bottom: 1px dashed rgba(212, 176, 107, 0.14);
+}
+.rd-zone:last-child { border-bottom: none; }
+.rd-zone-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.rd-zone-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+.rd-zone-cards { font-family: var(--font-display); color: var(--accent); font-size: 0.95rem; }
+.rd-zone-desc { font-family: var(--font-serif); color: var(--text-muted); line-height: 1.65; }
+
+/* 「每张牌的牌义」—— 逐张，可展开细读，无需跳转 */
+.rd-card {
+  border-bottom: 1px dashed rgba(212, 176, 107, 0.14);
+}
+.rd-card:last-child { border-bottom: none; }
+.rd-card > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.55rem 0;
+}
+.rd-card > summary::-webkit-details-marker { display: none; }
+.rd-card > summary::marker { content: ""; }
+.rd-name-plain {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--accent);
+}
+.rd-more {
+  margin-left: auto;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  white-space: nowrap;
+}
+.rd-card[open] > summary .rd-more { color: var(--accent); border-color: var(--accent-deep); }
+.rd-card-body { padding: 0.2rem 0 0.9rem; }
+.rd-m {
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 0 0 0.7rem;
+}
+.rd-facet {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.55rem;
+  line-height: 1.65;
+}
+.rd-facet-label {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--bg-1);
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 0.12rem 0.5rem;
+  margin-top: 0.15rem;
+}
+.rd-facet-text { font-family: var(--font-serif); color: var(--text-muted); }
+.rd-cardlink {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+.rd-cardlink:hover { color: var(--accent-soft); }
+
 @media (max-width: 560px) {
   .reading-detail { padding: 1.4rem 1.15rem; }
 }

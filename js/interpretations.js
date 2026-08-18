@@ -21,10 +21,10 @@ function getReadingSummary(spread, drawnCards) {
     return `<p class="summary">大牌阵已经铺开 —— 36 张牌各自落进一个宫位。先找到你的指示牌（依问卜者性别取「男人」或「女人」），看它落在哪一宫、四周与对角是什么牌，再顺着读开。想看每张牌的含义，点下面的<strong>解读</strong>。</p>`;
   }
 
-  // 九张 3×3 方阵：中央是核心，先看它，再按行、按列读。
+  // 九张 3×3 方阵：中央是核心；三行是层次，三列是时间。
   if (layout === "box") {
     const center = names[4] || "中央那张";
-    return `<p class="summary"><strong>先看正中央的${center}</strong> —— 它是这件事的核心。上面一行是过去与来路，中间一行是当下，下面一行指向去向；竖着按列读也成立。想看每张牌的含义、以及核心牌与四邻的组合，点下面的<strong>解读</strong>。</p>`;
+    return `<p class="summary"><strong>先看正中央的${center}</strong> —— 它是这件事的核心。三行是层次：上排是心上／念头，中排是当下，下排是根基／潜流；三列是时间：左＝过去、中＝现在、右＝未来。想看每张牌的含义、以及核心牌与四邻的组合，点下面的<strong>解读</strong>。</p>`;
   }
 
   // 线阵（三张 / 五张）：读成一句话，中间那张是主题。
